@@ -203,7 +203,7 @@ export const dataStore = {
       name: "Kusum Sarovar",
       image: "/kusum-sarovar-in-vrindavan-ancient-red-s-8508097d-20251106081941.jpg",
       description: "A stunning ancient reservoir surrounded by red sandstone architecture with intricate Mughal carvings. Built in memory of Suraj Mal, this sacred water body is where Radha would come to collect lotus flowers.",
-      significance: "Sacred bathing spot associated with Radha's pastimes, offers panoramic views of Govardhan Hill, and is especially revered during Kartik month."
+      significance: "According to the scriptures, Srimati Radharani used to come here with Her sakhis (companions) to collect flowers—“Kusum” means flower, hence the name Kusum Sarovar."
     },
     {
       id: 2,

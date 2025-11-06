@@ -72,7 +72,7 @@ export default function HeroCarousel() {
       style={{ 
         marginTop: `${headerHeight}px`, 
         height: `calc(100vh - ${headerHeight}px)`, 
-        top:'-35px'
+        top:'-50px'
       }}
     >
       {/* Floating Diya Animation */}

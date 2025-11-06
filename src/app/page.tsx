@@ -15,7 +15,7 @@ export default function Home() {
     <div className="relative">
       <Navigation />
       <main>
-        <section id="home">
+        <section id="home" className="relative">
           <HeroCarousel />
         </section>
         <AboutSection />

@@ -44,16 +44,16 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative bg-gradient-to-b from-background via-muted/30 to-muted/50 dark:from-gray-900 dark:via-gray-800 dark:to-black text-foreground overflow-hidden border-t border-border/50">
+    <footer className="relative bg-gradient-to-b from-muted/70 via-muted/90 to-muted dark:from-gray-800 dark:via-gray-900 dark:to-black text-foreground overflow-hidden border-t border-border/50">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Top Section */}
         <div className="py-12 sm:py-16 md:py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 md:gap-12">
           {/* Logo & Description */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4 sm:mb-6">
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+              <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
                 <Image
-                  src="/elegant-peacock-feather-icon-illustratio-727b518e-20251106081939.jpg"
+                  src="/logo.png"
                   alt="Vrindavan Live"
                   fill
                   className="object-contain"
@@ -196,11 +196,11 @@ export default function Footer() {
             </div>
 
             {/* Copyright */}
-            <div className="text-center md:text-right">
+            <div className="text-center md:text-right flex-shrink-0">
               <p className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2 justify-center md:justify-end">
                 Made with <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-saffron fill-saffron animate-pulse" /> for Krishna Devotees
               </p>
-              <p className="text-[10px] sm:text-xs text-muted-foreground/70 mt-1">
+              <p className="text-[10px] sm:text-xs text-muted-foreground/70 mt-1 text-center md:text-right">
                 © {new Date().getFullYear()} Vrindavan Live. All rights reserved.
               </p>
             </div>

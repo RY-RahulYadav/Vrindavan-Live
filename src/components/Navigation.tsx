@@ -71,7 +71,7 @@ export default function Navigation() {
           : "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md"
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-8 py-3 md:py-4">
+      <div className="container mx-auto px-4 lg:px-8 py-4 md:py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a 
@@ -82,9 +82,9 @@ export default function Navigation() {
             }}
             className="flex items-center gap-2 md:gap-3 group"
           >
-            <div className="relative w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
+            <div className="relative w-12 h-12 md:w-16 md:h-16 flex-shrink-0">
               <Image
-                src="/elegant-peacock-feather-icon-illustratio-727b518e-20251106081939.jpg"
+                src="/logo.png"
                 alt="Vrindavan Live Logo"
                 fill
                 className="object-contain group-hover:scale-110 transition-transform duration-300"
@@ -116,7 +116,7 @@ export default function Navigation() {
                     e.preventDefault()
                     scrollToSection(item.href)
                   }}
-                  className={`relative px-3 xl:px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-lg ${
+                  className={`relative px-3 xl:px-4 py-2 text-base font-semibold transition-colors duration-300 rounded-lg ${
                     isActive 
                       ? "text-saffron" 
                       : "text-foreground hover:text-saffron"
@@ -172,7 +172,7 @@ export default function Navigation() {
             <Button
               size="sm"
               variant="outline"
-              className="hidden md:inline-flex border-2 border-saffron text-saffron hover:bg-saffron hover:text-white font-semibold transition-all duration-300 text-xs md:text-sm px-3 md:px-4 rounded-full"
+              className="hidden md:inline-flex border-2 border-saffron text-saffron hover:bg-saffron hover:text-white font-bold transition-all duration-300 text-sm md:text-base px-4 md:px-6 py-3 md:py-4 rounded-full"
             >
               Get Started
             </Button>
@@ -232,7 +232,7 @@ export default function Navigation() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="text-base md:text-lg font-medium hover:text-saffron transition-colors py-2 px-4 rounded-lg hover:bg-muted"
+                  className="text-lg md:text-xl font-semibold hover:text-saffron transition-colors py-2 px-4 rounded-lg hover:bg-muted"
                 >
                   {item.label}
                 </motion.a>

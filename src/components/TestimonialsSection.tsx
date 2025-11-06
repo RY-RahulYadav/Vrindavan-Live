@@ -63,17 +63,17 @@ export default function TestimonialsSection() {
           {/* Navigation Buttons */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 md:-translate-x-12 lg:-translate-x-16 z-20 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-r from-peacock to-saffron text-white shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 md:-translate-x-12 lg:-translate-x-16 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full bg-gradient-to-r from-peacock to-saffron text-white shadow-xl hover:shadow-2xl transition-all duration-300 items-center justify-center group hidden min-[500px]:flex"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-125 transition-transform" />
+            <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 group-hover:scale-125 transition-transform" />
           </button>
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 md:translate-x-12 lg:translate-x-16 z-20 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-r from-peacock to-saffron text-white shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 md:translate-x-12 lg:translate-x-16 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full bg-gradient-to-r from-peacock to-saffron text-white shadow-xl hover:shadow-2xl transition-all duration-300 items-center justify-center group hidden min-[500px]:flex"
             aria-label="Next testimonial"
           >
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-125 transition-transform" />
+            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 group-hover:scale-125 transition-transform" />
           </button>
 
           {/* Testimonial Card */}

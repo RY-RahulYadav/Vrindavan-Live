@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "Vrindavan Live | Experience Krishna's Divine Abode",
   description: "Discover the sacred temples, holy places, and spiritual essence of Vrindavan. Plan your pilgrimage with hotel bookings, temple tours, and guided services.",
   keywords: "Vrindavan, Krishna, temples, pilgrimage, spiritual tourism, Banke Bihari, ISKCON, Prem Mandir, Yamuna, devotion",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

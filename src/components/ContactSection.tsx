@@ -66,13 +66,13 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-stretch">
           {/* Left: Contact Info & Map */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-8 flex flex-col h-full"
           >
             {/* Contact Info Cards */}
             <div className="space-y-4">
@@ -103,8 +103,8 @@ export default function ContactSection() {
               ))}
             </div>
 
-            {/* Google Maps */}
-            <motion.div
+            {/* Google Maps - Moved to right column */}
+            {/* <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -120,11 +120,11 @@ export default function ContactSection() {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale hover:grayscale-0 transition-all duration-500"
               ></iframe>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
-          {/* Right: Contact Form */}
-          <motion.div
+          {/* Right: Contact Form - COMMENTED OUT */}
+          {/* <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -135,7 +135,6 @@ export default function ContactSection() {
               </h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold mb-2 text-foreground">
                     Your Name <span className="text-saffron">*</span>
@@ -151,7 +150,6 @@ export default function ContactSection() {
                   />
                 </div>
 
-                {/* Email */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold mb-2 text-foreground">
                     Email Address <span className="text-saffron">*</span>
@@ -167,7 +165,6 @@ export default function ContactSection() {
                   />
                 </div>
 
-                {/* Phone */}
                 <div>
                   <label htmlFor="phone" className="block text-sm font-semibold mb-2 text-foreground">
                     Phone Number
@@ -182,7 +179,6 @@ export default function ContactSection() {
                   />
                 </div>
 
-                {/* Message */}
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold mb-2 text-foreground">
                     Your Message <span className="text-saffron">*</span>
@@ -198,7 +194,6 @@ export default function ContactSection() {
                   />
                 </div>
 
-                {/* Submit Button */}
                 <Button
                   type="submit"
                   size="lg"
@@ -208,6 +203,32 @@ export default function ContactSection() {
                   Send Message
                 </Button>
               </form>
+            </div>
+          </motion.div> */}
+
+          {/* Right: Google Maps - Moved here */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="w-full h-full flex"
+          >
+            <div className="bg-card rounded-3xl p-4 md:p-6 shadow-xl border border-border/50 h-full w-full flex flex-col">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-foreground">
+                Find Us
+              </h3>
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-border/50 flex-1 min-h-0">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56449.76887!2d77.65!3d27.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736ce47bffc039%3A0xfe5fc3da92c6341!2sVrindavan%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="grayscale hover:grayscale-0 transition-all duration-500 w-full h-full"
+                ></iframe>
+              </div>
             </div>
           </motion.div>
         </div>

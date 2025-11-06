@@ -144,57 +144,57 @@ export const dataStore = {
   saints: [
     {
       id: 1,
-      name: "Chaitanya Mahaprabhu",
-      image: "/unsplash-1507003211169-0a1dd7228f2d.jpg",
-      title: "Divine Incarnation of Radha-Krishna",
-      period: "1486-1534",
-      bio: "Chaitanya Mahaprabhu was a 16th-century Indian saint and spiritual leader who is considered to be the combined avatar of Radha and Krishna by his devotees. He propagated the worship of Krishna through sankirtana (congregational chanting) and is the inspiration behind the ISKCON movement. His teachings emphasized bhakti yoga and pure devotional love.",
-      contribution: "Revolutionized devotional practices through congregational chanting of the Hare Krishna mantra, established the philosophy of Achintya Bheda Abheda (inconceivable oneness and difference), and inspired millions to follow the path of pure love and devotion."
+      name: "Premanand Maharaj",
+      image: "/premanand-maharaj.jpg",
+      title: "Contemporary Saint & Spiritual Guide",
+      period: "1969–Present",
+      bio: "Premanand Maharaj Ji is a revered modern-day saint from Vrindavan, renowned for his divine discourses and deep bhakti toward Lord Krishna. His teachings inspire millions to embrace devotion, humility, and surrender.",
+      contribution: "Founder of ashrams and spiritual centres across India; continues to guide devotees through katha, bhajan, and seva promoting pure Krishna bhakti."
     },
     {
       id: 2,
-      name: "Swami Haridas",
-      image: "/unsplash-1609743522653-52354461eb27.jpg",
-      title: "Master of Devotional Music",
-      period: "1478-1573",
-      bio: "Swami Haridas was a revered saint and classical musician who founded the Haridasi tradition of music. He is believed to have been the guru of the legendary musician Tansen. His devotional songs and compositions are still sung in temples across Vrindavan.",
-      contribution: "Pioneered the Haridasi sampradaya of kirtan, composed numerous devotional songs that form the foundation of Indian classical music's spiritual dimension, and established Nidhivan as a sacred site of divine pastimes."
+      name: "Radhanath Swami",
+      image: "/radhaswami.webp",
+      title: "ISKCON Spiritual Leader & Author",
+      period: "1950–Present",
+      bio: "Radhanath Swami is a world-renowned ISKCON leader, author, and teacher who inspires spiritual seekers through compassion, humility, and universal devotion.",
+      contribution: "Author of 'The Journey Home'; established charitable projects, temples, and eco-villages; promotes global peace through bhakti-yoga."
     },
     {
       id: 3,
-      name: "Rupa Goswami",
-      image: "/unsplash-1506794778202-cad84cf45f1d.jpg",
-      title: "Pillar of Gaudiya Vaishnavism",
-      period: "1489-1564",
-      bio: "Rupa Goswami was one of the six Goswamis of Vrindavan, directly commissioned by Chaitanya Mahaprabhu to establish the theological foundation and temples of Vrindavan. He wrote numerous Sanskrit texts that form the philosophical backbone of Gaudiya Vaishnavism.",
-      contribution: "Authored masterpieces like Bhakti-rasamrita-sindhu and Ujjvala-nilamani, systematized the theology of devotional love, and established several important temples and sacred sites in Vrindavan."
+      name: "A.C. Bhaktivedanta Swami Prabhupada",
+      image: "/srila-prabhupada.jpg",
+      title: "Founder-Acharya of ISKCON",
+      period: "1896–1977",
+      bio: "Srila Prabhupada, a global spiritual icon, spread Krishna consciousness across continents. He translated sacred scriptures and founded ISKCON, igniting a worldwide devotional movement.",
+      contribution: "Established over 100 ISKCON temples worldwide; translated the Bhagavad-gita and Srimad-Bhagavatam into English; inspired millions to follow the path of bhakti-yoga."
     },
     {
       id: 4,
-      name: "Sanatana Goswami",
-      image: "/unsplash-1500648767791-00dcc994a43e.jpg",
-      title: "Elder Brother of Rupa Goswami",
-      period: "1488-1558",
-      bio: "Sanatana Goswami, elder brother of Rupa Goswami, was entrusted by Chaitanya Mahaprabhu with the task of uncovering the lost holy places of Vrindavan. He wrote essential texts on Vaishnava theology and practice.",
-      contribution: "Rediscovered and established numerous lost tirthas (holy places) of Vrindavan, wrote Brihad-bhagavatamrita and Hari-bhakti-vilasa, and laid the foundation for systematic Vaishnava worship practices."
+      name: "Chaitanya Mahaprabhu",
+      image: "/sri-chaitanya-mahaprabhu.jpg",
+      title: "Golden Avatar of Kali Yuga",
+      period: "1486–1534",
+      bio: "Chaitanya Mahaprabhu is revered as the combined form of Radha and Krishna. He revitalised the bhakti movement through sankirtana — the joyful congregational chanting of the holy names.",
+      contribution: "Spread the Hare Krishna maha-mantra; established Gaudiya Vaishnavism; inspired devotees to experience Krishna through love and song."
     },
     {
       id: 5,
-      name: "Mirabai",
-      image: "/unsplash-1438761681033-6461ffad8d80.jpg",
-      title: "Princess Saint & Poet",
-      period: "1498-1546",
-      bio: "Mirabai was a 16th-century Hindu mystic poet and devotee of Lord Krishna. Born into royalty, she renounced her privileged life to dedicate herself completely to Krishna. Her bhajans (devotional songs) are sung throughout India even today.",
-      contribution: "Composed hundreds of devotional poems and songs expressing intense love for Krishna, broke social barriers to pursue her devotion, and inspired countless women to embrace spiritual freedom and divine love."
+      name: "Vallabhacharya",
+      image: "/vallabhacharya-jayanti.webp",
+      title: "Founder of Pushti Marga",
+      period: "1479–1531",
+      bio: "Vallabhacharya was a great Vaishnava acharya and founder of the Pushti Marga (Path of Grace). He emphasised that Krishna's grace alone leads to salvation.",
+      contribution: "Established 84 baithaks (sacred seats); wrote commentaries on Vedanta; initiated the worship of Shrinathji; promoted seva and divine grace."
     },
     {
       id: 6,
-      name: "Vallabhacharya",
-      image: "/unsplash-1507003211169-0a1dd7228f2d.jpg",
-      title: "Founder of Pushti Marga",
-      period: "1479-1531",
-      bio: "Vallabhacharya was a Telugu philosopher who founded the Pushti Marga sect of Vaishnavism. He established the path of grace and emphasized serving Krishna with pure love and devotion. His teachings focus on surrendering to Krishna's grace.",
-      contribution: "Established Pushti Marga (Path of Grace) philosophy, founded the Vallabha Sampradaya, wrote commentaries on the Brahma Sutras and Bhagavata Purana, and established several Krishna temples throughout India."
+      name: "Jayadayal Goyandka",
+      image: "/jaydayalji.jpg",
+      title: "Founder of Gita Press, Gorakhpur",
+      period: "1885–1965",
+      bio: "Jayadayal Goyandka was a saintly businessman and visionary who founded Gita Press to make sacred scriptures accessible to all at minimal cost.",
+      contribution: "Founded Gita Press; published millions of copies of Bhagavad Gita and Ramayana; made spiritual wisdom available to common people."
     }
   ],
   holyPlaces: [

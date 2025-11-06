@@ -11,17 +11,32 @@ export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [direction, setDirection] = useState(0)
   const [mounted, setMounted] = useState(false)
+  const [headerHeight, setHeaderHeight] = useState(80)
   const slides = dataStore.carouselSlides
 
   useEffect(() => {
     setMounted(true)
+    
+    // Calculate header height dynamically
+    const updateHeaderHeight = () => {
+      const nav = document.querySelector('nav')
+      if (nav) {
+        setHeaderHeight(nav.offsetHeight)
+      }
+    }
+    
+    updateHeaderHeight()
+    window.addEventListener('resize', updateHeaderHeight)
     
     const timer = setInterval(() => {
       setDirection(1)
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 6000)
     
-    return () => clearInterval(timer)
+    return () => {
+      clearInterval(timer)
+      window.removeEventListener('resize', updateHeaderHeight)
+    }
   }, [slides.length])
 
   const nextSlide = () => {
@@ -52,7 +67,14 @@ export default function HeroCarousel() {
   if (!mounted) return null
 
   return (
-    <section className="relative w-full overflow-hidden bg-black" style={{ height: 'calc(100vh - 80px)', minHeight: '500px', maxHeight: '700px' }}>
+    <section 
+      className="relative w-full overflow-hidden bg-black  " 
+      style={{ 
+        marginTop: `${headerHeight}px`, 
+        height: `calc(100vh - ${headerHeight}px)`, 
+        top:'-35px'
+      }}
+    >
       {/* Floating Diya Animation */}
       <motion.div 
         className="absolute top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-10 z-20 pointer-events-none"
@@ -163,17 +185,17 @@ export default function HeroCarousel() {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full glass border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 group"
+        className="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-20 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full glass border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 group"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
+        <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 group-hover:scale-110 transition-transform" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full glass border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 group"
+        className="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-20 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full glass border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 group"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
+        <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 group-hover:scale-110 transition-transform" />
       </button>
 
       {/* Slide Indicators */}

@@ -423,8 +423,9 @@ export const dataStore = {
     { "id": 6, "url": "/hero/h8.jpg", "title": "Radha & Krishna Together 6", "category": "Radha Krishna" },
 
     // Temples (6 images)
-    
+
     { "id": 7, "url": "/gallery/t1.jpg", "title": "Radha & Krishna Together 3", "category": "Temples" },
+    
     { "id": 8, "url": "/gallery/t2.jpeg", "title": "Radha & Krishna Together 4", "category": "Temples" },
     { "id": 9, "url": "/gallery/t3.jpg", "title": "Prem Mandir Night View", "category": "Temples" },
     { "id": 10, "url": "/gallery/t4.jpg", "title": "Banke Bihari Temple Morning", "category": "Temples" },

@@ -109,10 +109,10 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <span className="inline-block text-saffron text-sm md:text-base tracking-[0.3em] uppercase font-semibold mb-4">
+              <span className="inline-block text-saffron text-base md:text-lg tracking-[0.3em] uppercase font-semibold mb-4">
                 Divine Services
               </span>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-saffron via-peacock to-gold bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-[25px] font-bold mb-6 bg-gradient-to-r from-saffron via-peacock to-gold bg-clip-text text-transparent">
                 Services for Radha & Krishna Devotees
               </h1>
             </motion.div>
@@ -144,7 +144,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-center max-w-3xl mx-auto"
             >
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-xl md:text-[22px] text-muted-foreground leading-relaxed">
                 Comprehensive services to make your spiritual journey to Vrindavan comfortable, memorable, and filled with divine blessings of Radha and Krishna
               </p>
             </motion.div>
@@ -176,18 +176,18 @@ export default function ServicesPage() {
 
                     {/* Content */}
                     <div className="relative">
-                      <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-saffron transition-colors">
+                      <h3 className="text-2xl md:text-[25px] font-bold mb-3 text-foreground group-hover:text-saffron transition-colors">
                         {service.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed mb-6">
+                      <p className="text-xl md:text-[22px] text-muted-foreground leading-relaxed mb-6">
                         {service.description}
                       </p>
 
                       {/* Features */}
                       <ul className="space-y-2 mb-6">
                         {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.color}`}></div>
+                          <li key={idx} className="flex items-center gap-2 text-xl md:text-[22px] text-muted-foreground">
+                            <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${service.color}`}></div>
                             {feature}
                           </li>
                         ))}

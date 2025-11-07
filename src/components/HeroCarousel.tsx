@@ -108,11 +108,11 @@ export default function HeroCarousel() {
 
   return (
     <section 
-      className="relative w-full overflow-hidden bg-black  " 
+      className="relative w-full overflow-hidden bg-black hero-carousel-section" 
       style={{ 
         marginTop: `${headerHeight}px`, 
         height: `calc(100vh - ${headerHeight}px)`, 
-        top:'-50px'
+        top: '-50px'
       }}
     >
      
@@ -127,9 +127,10 @@ export default function HeroCarousel() {
           animate="center"
           exit="exit"
           transition={{ 
-            x: { type: "tween", duration: 0.4, ease: "easeInOut" },
-            opacity: { duration: 0.2, ease: "easeInOut" }
+            x: { type: "tween", duration: 0.3, ease: "easeOut" },
+            opacity: { duration: 0.2, ease: "easeOut" }
           }}
+          style={{ willChange: 'transform, opacity' }}
           className="absolute inset-0"
         >
           {/* Background Image */}
@@ -138,7 +139,7 @@ export default function HeroCarousel() {
               src={currentSlideData.image}
               alt={currentSlideData.title}
               fill
-              className="object-cover"
+              className="object-cover min-[600px]:object-contain"
               priority
               sizes="100vw"
               onError={(e) => {

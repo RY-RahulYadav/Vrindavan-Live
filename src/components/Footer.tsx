@@ -51,7 +51,7 @@ export default function Footer() {
           {/* Logo & Description */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4 sm:mb-6">
-              <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
+              <div className="relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0">
                 <Image
                   src="/logo.png"
                   alt="Vrindavan Live"
@@ -59,43 +59,43 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-saffron via-gold to-peacock bg-clip-text text-transparent">
+              <span className="text-2xl md:text-[30px] font-bold bg-gradient-to-r from-saffron via-gold to-peacock bg-clip-text text-transparent">
                 Vrindavan Live
               </span>
             </div>
-            <p className="text-muted-foreground leading-relaxed mb-4 sm:mb-6 italic text-sm sm:text-base font-serif">
+            <p className="text-xl md:text-[22px] text-muted-foreground leading-relaxed mb-4 sm:mb-6 italic font-serif">
               "Every moment here is a prayer, every breath a devotion to the divine."
             </p>
-            <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+            <p className="text-xl md:text-[22px] text-muted-foreground leading-relaxed">
               Experience the eternal bliss of Krishna's sacred land. We help pilgrims discover Vrindavan's divine beauty and spiritual essence.
             </p>
             
             {/* Contact Info */}
             <div className="mt-6 space-y-2">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Phone className="w-4 h-4 text-saffron" />
-                <span>+91 5652-240000</span>
+              <div className="flex items-center gap-2 text-xl md:text-[20px] text-muted-foreground">
+                <Phone className="w-5 h-5 md:w-7 md:h-7 text-saffron" />
+                <span>+91 87006 61267</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4 text-saffron" />
+              <div className="flex items-center gap-2 text-xl md:text-[20px] text-muted-foreground">
+                <Mail className="w-5 h-5 md:w-7 md:h-7 text-saffron" />
                 <span>info@vrindavanlive.com</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4 text-saffron" />
-                <span>Vrindavan, Mathura, Uttar Pradesh</span>
+              <div className="flex items-start gap-2 text-xl md:text-[20px] text-muted-foreground">
+                <MapPin className="w-5 h-5 md:w-7 md:h-7 text-saffron mt-0.5 flex-shrink-0" />
+                <span>Gautam pada chauraha, Near gaudiya math temple, Vrindavan, Mathura, Uttar Pradesh</span>
               </div>
             </div>
           </div>
 
           {/* Explore */}
           <div>
-            <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-5 text-foreground font-serif">Explore</h3>
+            <h3 className="text-2xl md:text-[25px] font-bold mb-4 sm:mb-5 text-foreground font-serif">Explore</h3>
             <ul className="space-y-2.5 sm:space-y-3">
               {footerLinks.explore.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-saffron transition-colors inline-block text-sm sm:text-base hover:translate-x-1 duration-300"
+                    className="text-xl md:text-[20px] text-muted-foreground hover:text-saffron transition-colors inline-block hover:translate-x-1 duration-300"
                   >
                     {link.label}
                   </a>
@@ -106,13 +106,13 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-5 text-foreground font-serif">Services</h3>
+            <h3 className="text-2xl md:text-[25px] font-bold mb-4 sm:mb-5 text-foreground font-serif">Services</h3>
             <ul className="space-y-2.5 sm:space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-saffron transition-colors inline-block text-sm sm:text-base hover:translate-x-1 duration-300"
+                    className="text-xl md:text-[20px] text-muted-foreground hover:text-saffron transition-colors inline-block hover:translate-x-1 duration-300"
                   >
                     {link.label}
                   </a>
@@ -123,13 +123,13 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-5 text-foreground font-serif">Support</h3>
+            <h3 className="text-2xl md:text-[25px] font-bold mb-4 sm:mb-5 text-foreground font-serif">Support</h3>
             <ul className="space-y-2.5 sm:space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-saffron transition-colors inline-block text-sm sm:text-base hover:translate-x-1 duration-300"
+                    className="text-xl md:text-[20px] text-muted-foreground hover:text-saffron transition-colors inline-block hover:translate-x-1 duration-300"
                   >
                     {link.label}
                   </a>
@@ -180,16 +180,16 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
             {/* Social Links */}
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-              <span className="text-xs sm:text-sm text-muted-foreground font-medium">Follow Us:</span>
+              <span className="text-xl md:text-[22px] text-muted-foreground font-medium">Follow Us:</span>
               <div className="flex items-center gap-2 sm:gap-3">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-muted hover:bg-saffron text-muted-foreground hover:text-white transition-all duration-300 flex items-center justify-center group border border-border hover:border-saffron"
+                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-muted hover:bg-saffron text-muted-foreground hover:text-white transition-all duration-300 flex items-center justify-center group border border-border hover:border-saffron"
                   >
-                    <social.icon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
+                    <social.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />
                   </a>
                 ))}
               </div>
@@ -197,10 +197,10 @@ export default function Footer() {
 
             {/* Copyright */}
             <div className="text-center md:text-right flex-shrink-0">
-              <p className="text-xs sm:text-sm text-muted-foreground flex items-center gap-2 justify-center md:justify-end">
-                Made with <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-saffron fill-saffron animate-pulse" /> for Krishna Devotees
+              <p className="text-xl md:text-[20px] text-muted-foreground flex items-center gap-2 justify-center md:justify-end">
+                Made with <Heart className="w-5 h-5 md:w-7 md:h-7 text-saffron fill-saffron animate-pulse" /> for Krishna Devotees
               </p>
-              <p className="text-[10px] sm:text-xs text-muted-foreground/70 mt-1 text-center md:text-right">
+              <p className="text-xl md:text-[20px] text-muted-foreground/70 mt-1 text-center md:text-right">
                 © {new Date().getFullYear()} Vrindavan Live. All rights reserved.
               </p>
             </div>

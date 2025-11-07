@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 
 export default function TemplesSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" })
   const [currentIndex, setCurrentIndex] = useState(0)
   const temples = dataStore.temples
 
@@ -32,22 +32,23 @@ export default function TemplesSection() {
   }
 
   return (
-    <section id="temples" ref={ref} className="relative py-20 md:py-32 bg-gradient-to-b from-background to-muted overflow-hidden">
+    <section id="temples" ref={ref} className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="text-center mb-12 md:mb-16"
+          style={{ willChange: 'transform, opacity' }}
         >
-          <span className="inline-block text-peacock text-sm md:text-base tracking-[0.3em] uppercase font-semibold mb-4">
+          <span className="inline-block text-peacock text-base md:text-[28px] tracking-[0.3em] uppercase font-semibold mb-4">
             Sacred Destinations
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-peacock via-saffron to-gold bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-[32px] font-bold mb-6 bg-gradient-to-r from-peacock via-saffron to-gold bg-clip-text text-transparent">
             Famous Temples of Vrindavan
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Discover the magnificent temples where millions of devotees find peace, divine love, and spiritual awakening
           </p>
         </motion.div>
@@ -78,14 +79,15 @@ export default function TemplesSection() {
               return (
                 <motion.div
                   key={temple.id}
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { 
                     opacity: isCenter ? 1 : 0.6, 
                     scale: isCenter ? 1 : 0.9,
                     y: isCenter ? -10 : 0
                   } : {}}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  transition={{ duration: 0.4, delay: idx * 0.05, ease: "easeOut" }}
                   className={`group ${isCenter ? 'md:col-span-1 z-10' : 'hidden md:block'}`}
+                  style={{ willChange: 'transform, opacity' }}
                 >
                   <div className="bg-card rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-border/50 hover:border-saffron/50 h-full">
                     {/* Temple Image */}
@@ -99,23 +101,23 @@ export default function TemplesSection() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                       
                       {/* Year Badge */}
-                      <div className="absolute top-4 right-4 bg-gradient-to-r from-saffron to-gold text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                      <div className="absolute top-4 right-4 bg-gradient-to-r from-saffron to-gold text-white text-sm md:text-base font-bold px-3 py-1 rounded-full shadow-lg">
                         Est. {temple.year}
                       </div>
                     </div>
 
                     {/* Temple Info */}
                     <div className="p-6">
-                      <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-saffron transition-colors">
+                      <h3 className="text-2xl md:text-[25px] font-bold mb-3 text-foreground group-hover:text-saffron transition-colors">
                         {temple.name}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed mb-4 line-clamp-3">
+                      <p className="text-xl md:text-[22px] text-muted-foreground leading-relaxed mb-4 line-clamp-3">
                         {temple.description}
                       </p>
 
                       {/* Timings */}
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                        <Clock className="w-4 h-4 text-peacock" />
+                      <div className="flex items-center gap-2 text-xl md:text-[22px] text-muted-foreground mb-4">
+                        <Clock className="w-5 h-5 md:w-6 md:h-6 text-peacock" />
                         <span>{temple.timings}</span>
                       </div>
 
@@ -154,8 +156,9 @@ export default function TemplesSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-12"
+          transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
+          className="text-center mt-8 md:mt-12"
+          style={{ willChange: 'transform, opacity' }}
         >
           <Button 
             size="lg"

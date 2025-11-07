@@ -9,7 +9,7 @@ import Image from "next/image"
 
 export default function TestimonialsSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" })
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(1)
   const testimonials = dataStore.testimonials
@@ -33,32 +33,34 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonials" ref={ref} className="relative py-12 sm:py-16 md:py-24 lg:py-32 bg-gradient-to-b from-ivory/50 via-background to-ivory/30 overflow-hidden">
+    <section id="testimonials" ref={ref} className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-ivory/50 via-background to-ivory/30 overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 sm:mb-16"
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="text-center mb-8 sm:mb-12 md:mb-16"
+          style={{ willChange: 'transform, opacity' }}
         >
-          <span className="inline-block text-peacock text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.3em] uppercase font-semibold mb-3 sm:mb-4">
+          <span className="inline-block text-peacock text-sm sm:text-base md:text-[28px] tracking-[0.2em] sm:tracking-[0.3em] uppercase font-semibold mb-3 sm:mb-4">
             Devotee Experiences
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-peacock via-gold to-saffron bg-clip-text text-transparent px-4">
+          <h2 className="text-4xl md:text-[32px] font-bold mb-4 sm:mb-6 bg-gradient-to-r from-peacock via-gold to-saffron bg-clip-text text-transparent px-4">
             Stories from the Heart
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
             Hear from pilgrims who experienced the divine grace and transformative power of Vrindavan
           </p>
         </motion.div>
 
         {/* Testimonials Slider */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           className="max-w-5xl mx-auto relative px-4 sm:px-8 md:px-0"
+          style={{ willChange: 'transform, opacity' }}
         >
           {/* Navigation Buttons */}
           <button
@@ -87,7 +89,7 @@ export default function TestimonialsSection() {
                     initial={{ opacity: 0, x: direction > 0 ? 300 : -300 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: direction > 0 ? -300 : 300 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
                     className="bg-card/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl border border-border/50"
                   >
                 {/* Quote Icon */}
@@ -98,7 +100,7 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center text-foreground leading-relaxed mb-6 sm:mb-8 italic px-2">
+                <p className="text-xl md:text-[22px] text-center text-foreground leading-relaxed mb-6 sm:mb-8 italic px-2">
                   "{testimonial.text}"
                 </p>
 
@@ -120,8 +122,8 @@ export default function TestimonialsSection() {
                     />
                   </div>
                   <div className="text-left">
-                    <h4 className="text-base sm:text-lg font-bold text-foreground">{testimonial.name}</h4>
-                    <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.location}</p>
+                    <h4 className="text-2xl md:text-[25px] font-bold text-foreground">{testimonial.name}</h4>
+                    <p className="text-xl md:text-[22px] text-muted-foreground">{testimonial.location}</p>
                   </div>
                 </div>
                   </motion.div>

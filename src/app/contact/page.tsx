@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
-import { Mail, Phone, MapPin, Send, Clock } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Clock, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -15,7 +15,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+91 5652-240000", "+91 5652-240001"],
+    details: ["+91 87006 61267"],
     color: "from-peacock to-blue-600"
   },
   {
@@ -27,7 +27,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: ["Vrindavan, Mathura District", "Uttar Pradesh, India - 281121"],
+    details: ["Gautam pada chauraha", "Near gaudiya math temple", "Vrindavan, Mathura District", "Uttar Pradesh, India - 281121"],
     color: "from-gold to-yellow-600"
   },
   {
@@ -68,13 +68,13 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <span className="inline-block text-saffron text-sm md:text-base tracking-[0.3em] uppercase font-semibold mb-4">
+              <span className="inline-block text-saffron text-base md:text-lg tracking-[0.3em] uppercase font-semibold mb-4">
                 Get in Touch
               </span>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-saffron via-peacock to-gold bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-[25px] font-bold mb-6 bg-gradient-to-r from-saffron via-peacock to-gold bg-clip-text text-transparent">
                 Contact Us
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Have questions about your Vrindavan visit? We're here to help make your pilgrimage to Radha and Krishna's divine abode seamless and memorable
               </p>
             </motion.div>
@@ -82,8 +82,8 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Content */}
-        <section className="relative py-20 md:py-32 bg-gradient-to-b from-background via-muted to-background">
-          <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <section className="relative py-20 md:py-32 pb-24 md:pb-32 bg-gradient-to-b from-background via-muted to-background">
+          <div className="container mx-auto px-2 sm:px-4 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-stretch">
               {/* Left: Contact Info Cards */}
               <motion.div
@@ -92,7 +92,7 @@ export default function ContactPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="space-y-6"
               >
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
+                <h2 className="text-3xl md:text-[25px] font-bold mb-8 text-foreground">
                   Contact Information
                 </h2>
                 {contactInfo.map((info, index) => (
@@ -103,15 +103,15 @@ export default function ContactPage() {
                     transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                     className="group"
                   >
-                    <div className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-saffron/50">
-                      <div className="flex items-start gap-4">
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${info.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                          <info.icon className="w-6 h-6 text-white" />
+                    <div className="bg-card rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-saffron/50">
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${info.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                          <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-lg font-bold mb-2 text-foreground">{info.title}</h3>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-2xl md:text-[25px] font-bold mb-1 sm:mb-2 text-foreground">{info.title}</h3>
                           {info.details.map((detail, idx) => (
-                            <p key={idx} className="text-muted-foreground">
+                            <p key={idx} className="text-xl md:text-[22px] text-muted-foreground break-words">
                               {detail}
                             </p>
                           ))}
@@ -128,14 +128,14 @@ export default function ContactPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <div className="bg-card rounded-3xl p-8 md:p-10 shadow-xl border border-border/50">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
+                <div className="bg-card rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-xl border border-border/50">
+                  <h3 className="text-2xl md:text-[25px] font-bold mb-4 sm:mb-6 text-foreground">
                     Send Us a Message
                   </h3>
                   
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-semibold mb-2 text-foreground">
+                      <label htmlFor="name" className="block text-xl md:text-[22px] font-semibold mb-1 sm:mb-2 text-foreground">
                         Your Name <span className="text-saffron">*</span>
                       </label>
                       <Input
@@ -145,12 +145,12 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         required
-                        className="border-border/50 focus:border-saffron focus:ring-saffron/20"
+                        className="text-xl md:text-[22px] border-border/50 focus:border-saffron focus:ring-saffron/20 h-12 sm:h-14"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-semibold mb-2 text-foreground">
+                      <label htmlFor="email" className="block text-xl md:text-[22px] font-semibold mb-1 sm:mb-2 text-foreground">
                         Email Address <span className="text-saffron">*</span>
                       </label>
                       <Input
@@ -160,12 +160,12 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
-                        className="border-border/50 focus:border-saffron focus:ring-saffron/20"
+                        className="text-xl md:text-[22px] border-border/50 focus:border-saffron focus:ring-saffron/20 h-12 sm:h-14"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold mb-2 text-foreground">
+                      <label htmlFor="phone" className="block text-xl md:text-[22px] font-semibold mb-1 sm:mb-2 text-foreground">
                         Phone Number
                       </label>
                       <Input
@@ -174,31 +174,31 @@ export default function ContactPage() {
                         placeholder="+91 XXXXX XXXXX"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="border-border/50 focus:border-saffron focus:ring-saffron/20"
+                        className="text-xl md:text-[22px] border-border/50 focus:border-saffron focus:ring-saffron/20 h-12 sm:h-14"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-semibold mb-2 text-foreground">
+                      <label htmlFor="message" className="block text-xl md:text-[22px] font-semibold mb-1 sm:mb-2 text-foreground">
                         Your Message <span className="text-saffron">*</span>
                       </label>
                       <Textarea
                         id="message"
                         placeholder="Tell us about your inquiry or how we can help..."
-                        rows={6}
+                        rows={4}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         required
-                        className="border-border/50 focus:border-saffron focus:ring-saffron/20 resize-none"
+                        className="text-xl md:text-[22px] border-border/50 focus:border-saffron focus:ring-saffron/20 resize-none min-h-[120px] sm:min-h-[140px]"
                       />
                     </div>
 
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-gradient-to-r from-saffron to-gold hover:from-saffron/90 hover:to-gold/90 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full bg-gradient-to-r from-saffron to-gold hover:from-saffron/90 hover:to-gold/90 text-white text-xl md:text-[22px] font-semibold shadow-lg hover:shadow-xl transition-all duration-300 py-6 sm:py-8"
                     >
-                      <Send className="w-5 h-5 mr-2" />
+                      <Send className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                       Send Message
                     </Button>
                   </form>
@@ -214,7 +214,7 @@ export default function ContactPage() {
               className="mt-16"
             >
               <div className="bg-card rounded-3xl p-4 md:p-6 shadow-xl border border-border/50">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-foreground">
+                <h3 className="text-2xl md:text-[25px] font-bold mb-4 md:mb-6 text-foreground">
                   Find Us on Map
                 </h3>
                 <div className="rounded-2xl overflow-hidden shadow-lg border border-border/50">
@@ -235,6 +235,26 @@ export default function ContactPage() {
         </section>
       </main>
       <Footer />
+
+      {/* Fixed Call and WhatsApp Buttons - Mobile Only */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 flex sm:hidden border-t border-border/20">
+        <a
+          href="tel:+918700661267"
+          className="flex-1 bg-gradient-to-r from-saffron to-gold hover:from-saffron/90 hover:to-gold/90 text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-base md:text-lg"
+        >
+          <Phone className="w-4 h-4" />
+          <span>Call Now</span>
+        </a>
+        <a
+          href="https://wa.me/918700661267"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 bg-gradient-to-r from-green-700 to-green-600 hover:from-green-800 hover:to-green-700 text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-base md:text-lg"
+        >
+          <MessageCircle className="w-4 h-4" />
+          <span>WhatsApp</span>
+        </a>
+      </div>
     </div>
   )
 }

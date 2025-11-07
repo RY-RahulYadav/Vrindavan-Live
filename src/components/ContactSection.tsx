@@ -3,14 +3,14 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 export default function ContactSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" })
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,7 +28,7 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+91 5652-240000", "+91 5652-240001"],
+      details: ["+91 87006 61267"],
       color: "from-peacock to-blue-600"
     },
     {
@@ -40,59 +40,62 @@ export default function ContactSection() {
     {
       icon: MapPin,
       title: "Address",
-      details: ["Vrindavan, Mathura District", "Uttar Pradesh, India - 281121"],
+      details: ["Gautam pada chauraha", "Near gaudiya math temple", "Vrindavan, Mathura District", "Uttar Pradesh, India - 281121"],
       color: "from-gold to-yellow-600"
     }
   ]
 
   return (
-    <section id="contact" ref={ref} className="relative py-20 md:py-32 bg-gradient-to-b from-muted to-background overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+    <section id="contact" ref={ref} className="relative py-16 sm:py-20 md:py-24 lg:py-32 pb-24 sm:pb-20 md:pb-24 lg:pb-32 bg-gradient-to-b from-muted to-background overflow-hidden">
+      <div className="container mx-auto px-2 sm:px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="text-center mb-12 md:mb-16"
+          style={{ willChange: 'transform, opacity' }}
         >
-          <span className="inline-block text-saffron text-sm md:text-base tracking-[0.3em] uppercase font-semibold mb-4">
+          <span className="inline-block text-saffron text-base md:text-[28px] tracking-[0.3em] uppercase font-semibold mb-4">
             Get in Touch
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-saffron via-gold to-peacock bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-[32px] font-bold mb-6 bg-gradient-to-r from-saffron via-gold to-peacock bg-clip-text text-transparent">
             Contact Us
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Have questions about your Vrindavan visit? We're here to help make your pilgrimage seamless and memorable
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-stretch">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 max-w-7xl mx-auto items-stretch">
           {/* Left: Contact Info & Map */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
             className="space-y-8 flex flex-col h-full"
+            style={{ willChange: 'transform, opacity' }}
           >
             {/* Contact Info Cards */}
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={info.title}
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.2 + index * 0.05, ease: "easeOut" }}
                   className="group"
+                  style={{ willChange: 'transform, opacity' }}
                 >
-                  <div className="bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-saffron/50">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${info.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                        <info.icon className="w-6 h-6 text-white" />
+                  <div className="bg-card rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-saffron/50">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${info.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                        <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-bold mb-2 text-foreground">{info.title}</h3>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-2xl md:text-[25px] font-bold mb-1 sm:mb-2 text-foreground">{info.title}</h3>
                         {info.details.map((detail, idx) => (
-                          <p key={idx} className="text-muted-foreground">
+                          <p key={idx} className="text-xl md:text-[20px] text-muted-foreground break-words">
                             {detail}
                           </p>
                         ))}
@@ -208,16 +211,17 @@ export default function ContactSection() {
 
           {/* Right: Google Maps - Moved here */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             className="w-full h-full flex"
+            style={{ willChange: 'transform, opacity' }}
           >
-            <div className="bg-card rounded-3xl p-4 md:p-6 shadow-xl border border-border/50 h-full w-full flex flex-col">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-foreground">
+            <div className="bg-card rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 shadow-xl border border-border/50 h-full w-full flex flex-col">
+              <h3 className="text-2xl md:text-[25px] font-bold mb-3 sm:mb-4 md:mb-6 text-foreground">
                 Find Us
               </h3>
-              <div className="rounded-2xl overflow-hidden shadow-lg border border-border/50 flex-1 min-h-0">
+              <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border border-border/50 flex-1 min-h-[250px] sm:min-h-[300px] md:min-h-0">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56449.76887!2d77.65!3d27.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736ce47bffc039%3A0xfe5fc3da92c6341!2sVrindavan%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890"
                   width="100%"
@@ -232,6 +236,26 @@ export default function ContactSection() {
             </div>
           </motion.div>
         </div>
+      </div>
+
+      {/* Fixed Call and WhatsApp Buttons - Mobile Only */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 flex sm:hidden border-t border-border/20">
+        <a
+          href="tel:+918700661267"
+          className="flex-1 bg-gradient-to-r from-saffron to-gold hover:from-saffron/90 hover:to-gold/90 text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-base md:text-lg"
+        >
+          <Phone className="w-4 h-4" />
+          <span>Call Now</span>
+        </a>
+        <a
+          href="https://wa.me/918700661267"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 bg-gradient-to-r from-green-700 to-green-600 hover:from-green-800 hover:to-green-700 text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-base md:text-lg"
+        >
+          <MessageCircle className="w-4 h-4" />
+          <span>WhatsApp</span>
+        </a>
       </div>
     </section>
   )

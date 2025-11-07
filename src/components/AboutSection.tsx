@@ -73,23 +73,31 @@ export default function AboutSection() {
             <div className="grid grid-cols-2 gap-4">
               <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/banke-bihari-temple-in-vrindavan-morning-9b65e674-20251106081940.jpg"
+                  src="/nab.jpeg"
                   alt="Vrindavan Temple"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl mt-8">
+              <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/yamuna-river-ghat-in-vrindavan-at-sunris-e57a256d-20251106081939.jpg"
+                  src="/ab2.jpg"
                   alt="Yamuna Ghat"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <div className="relative h-48 rounded-2xl overflow-hidden shadow-xl col-span-2">
+              <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/prem-mandir-temple-in-vrindavan-at-night-38e89639-20251106081940.jpg"
+                  src="/radha_govind.jpg"
+                  alt="Vrindavan Sacred Place"
+                  fill
+                  className="object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="relative h-64 rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/radhakrishan7.webp"
                   alt="Prem Mandir"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"

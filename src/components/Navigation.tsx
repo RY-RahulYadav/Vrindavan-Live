@@ -5,18 +5,21 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Moon, Sun, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "Temples", href: "#temples" },
-  { label: "About Vrindavan", href: "#about" },
-  { label: "Saints", href: "#saints" },
-  { label: "Services", href: "#services" },
+  { label: "About", href: "#about" },
   { label: "Gallery", href: "#gallery" },
+  { label: "Temples", href: "#temples" },
+  { label: "Saints", href: "#saints" },
+  { label: "Services", href: "/services" },
   { label: "Contact", href: "#contact" },
 ]
 
 export default function Navigation() {
+  const router = useRouter()
   const [scrolled, setScrolled] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -26,8 +29,11 @@ export default function Navigation() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
       
-      // Update active section based on scroll position
-      const sections = navItems.map(item => item.href.replace('#', ''))
+      // Update active section based on scroll position (only for hash links)
+      const sections = navItems
+        .filter(item => item.href.startsWith('#'))
+        .map(item => item.href.replace('#', ''))
+      
       for (const section of sections) {
         const element = document.getElementById(section)
         if (element) {
@@ -53,6 +59,13 @@ export default function Navigation() {
   }, [darkMode])
 
   const scrollToSection = (href: string) => {
+    // If it's a page route (starts with /), navigate using Next.js router
+    if (href.startsWith('/')) {
+      router.push(href)
+      setMobileOpen(false)
+      return
+    }
+    // Otherwise, scroll to section
     const element = document.querySelector(href)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
@@ -105,8 +118,8 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => {
-              const sectionId = item.href.replace('#', '')
-              const isActive = activeSection === sectionId
+              const sectionId = item.href.startsWith('#') ? item.href.replace('#', '') : ''
+              const isActive = item.href.startsWith('#') ? activeSection === sectionId : false
               
               return (
                 <a

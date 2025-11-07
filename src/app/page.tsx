@@ -19,12 +19,12 @@ export default function Home() {
           <HeroCarousel />
         </section>
         <AboutSection />
+        <GallerySection />
         <TemplesSection />
         <SaintsSection />
         <HolyPlacesSection />
-        <ServicesSection />
+        {/* <ServicesSection /> */}
         <TestimonialsSection />
-        <GallerySection />
         <ContactSection />
       </main>
       <Footer />

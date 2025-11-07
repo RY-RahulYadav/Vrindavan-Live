@@ -12,7 +12,37 @@ export default function HeroCarousel() {
   const [direction, setDirection] = useState(0)
   const [mounted, setMounted] = useState(false)
   const [headerHeight, setHeaderHeight] = useState(80)
-  const slides = dataStore.carouselSlides
+  // Filter out any invalid/undefined slides
+  const slides = dataStore.carouselSlides.filter(slide => slide && slide.image && slide.title)
+
+  // Ensure currentSlide is within valid range when slides change
+  useEffect(() => {
+    setCurrentSlide((prev) => {
+      if (slides.length === 0) return 0
+      return prev >= slides.length ? 0 : prev
+    })
+  }, [slides.length])
+
+  // Preload next and previous images
+  useEffect(() => {
+    if (slides.length === 0) return
+    
+    const preloadImage = (src: string) => {
+      const img = new window.Image()
+      img.src = src
+    }
+    
+    const currentIndex = Math.max(0, Math.min(currentSlide, slides.length - 1))
+    const nextIndex = (currentIndex + 1) % slides.length
+    const prevIndex = (currentIndex - 1 + slides.length) % slides.length
+    
+    if (slides[nextIndex]?.image) {
+      preloadImage(slides[nextIndex].image)
+    }
+    if (slides[prevIndex]?.image) {
+      preloadImage(slides[prevIndex].image)
+    }
+  }, [currentSlide, slides])
 
   useEffect(() => {
     setMounted(true)
@@ -29,8 +59,10 @@ export default function HeroCarousel() {
     window.addEventListener('resize', updateHeaderHeight)
     
     const timer = setInterval(() => {
-      setDirection(1)
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
+      if (slides.length > 0) {
+        setDirection(1)
+        setCurrentSlide((prev) => (prev + 1) % slides.length)
+      }
     }, 6000)
     
     return () => {
@@ -40,18 +72,20 @@ export default function HeroCarousel() {
   }, [slides.length])
 
   const nextSlide = () => {
+    if (slides.length === 0) return
     setDirection(1)
     setCurrentSlide((prev) => (prev + 1) % slides.length)
   }
 
   const prevSlide = () => {
+    if (slides.length === 0) return
     setDirection(-1)
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
   }
 
   const slideVariants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? 500 : -500,
       opacity: 0
     }),
     center: {
@@ -59,12 +93,18 @@ export default function HeroCarousel() {
       opacity: 1
     },
     exit: (direction: number) => ({
-      x: direction > 0 ? -1000 : 1000,
+      x: direction > 0 ? -500 : 500,
       opacity: 0
     })
   }
 
-  if (!mounted) return null
+  if (!mounted || !slides || slides.length === 0) return null
+
+  // Ensure currentSlide is within valid range
+  const safeCurrentSlide = Math.max(0, Math.min(currentSlide, slides.length - 1))
+  const currentSlideData = slides[safeCurrentSlide]
+
+  if (!currentSlideData) return null
 
   return (
     <section 
@@ -93,28 +133,32 @@ export default function HeroCarousel() {
       </motion.div>
 
       {/* Carousel Slides */}
-      <AnimatePresence initial={false} custom={direction} mode="wait">
+      <AnimatePresence initial={false} custom={direction} mode="sync">
         <motion.div
-          key={currentSlide}
+          key={safeCurrentSlide}
           custom={direction}
           variants={slideVariants}
           initial="enter"
           animate="center"
           exit="exit"
           transition={{ 
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.3 }
+            x: { type: "tween", duration: 0.4, ease: "easeInOut" },
+            opacity: { duration: 0.2, ease: "easeInOut" }
           }}
           className="absolute inset-0"
         >
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
-              src={slides[currentSlide].image}
-              alt={slides[currentSlide].title}
+              src={currentSlideData.image}
+              alt={currentSlideData.title}
               fill
               className="object-cover"
               priority
+              sizes="100vw"
+              onError={(e) => {
+                console.error('Image load error:', currentSlideData.image)
+              }}
             />
             {/* Gradient Overlays */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
@@ -122,63 +166,7 @@ export default function HeroCarousel() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 py-8 sm:py-12">
-            <div className="text-center max-w-6xl w-full">
-              {/* Subtitle */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="mb-4 sm:mb-6 md:mb-8"
-              >
-                <span className="inline-block text-gold text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.3em] uppercase font-semibold px-3 sm:px-4 md:px-6 py-1 sm:py-1.5 md:py-2 rounded-full border border-gold/30 backdrop-blur-sm">
-                  {slides[currentSlide].subtitle}
-                </span>
-              </motion.div>
-
-              {/* Title */}
-              <motion.h1
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 md:mb-8 tracking-tight leading-tight px-4"
-              >
-                {slides[currentSlide].title}
-              </motion.h1>
-
-              {/* Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-200 mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed px-4 line-clamp-2 sm:line-clamp-none"
-              >
-                {slides[currentSlide].description}
-              </motion.p>
-
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
-                className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center px-4"
-              >
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-saffron to-gold hover:from-saffron/90 hover:to-gold/90 text-white text-xs sm:text-sm md:text-base px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 rounded-full shadow-2xl hover:shadow-saffron/50 transition-all duration-300 font-semibold w-full sm:w-auto"
-                >
-                  Explore Temples
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="border-2 border-white/80 text-blue hover:bg-white hover:text-peacock text-xs sm:text-sm md:text-base px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 rounded-full backdrop-blur-sm transition-all duration-300 font-semibold w-full sm:w-auto"
-                >
-                  Plan Your Visit
-                </Button>
-              </motion.div>
-            </div>
-          </div>
+          
         </motion.div>
       </AnimatePresence>
 

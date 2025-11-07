@@ -6,49 +6,67 @@ import { Moon, Sun, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 
 const navItems = [
-  { label: "Home", href: "#home" },
+  { label: "Home", href: "/" },
   { label: "About", href: "#about" },
   { label: "Gallery", href: "#gallery" },
   { label: "Temples", href: "#temples" },
   { label: "Saints", href: "#saints" },
   { label: "Services", href: "/services" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ]
 
 export default function Navigation() {
   const router = useRouter()
+  const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
 
   useEffect(() => {
+    // Only track scroll for active sections if we're on the home page
+    if (pathname !== '/') return
+    
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
+      
+      // If at the top of the page, set home as active
+      if (window.scrollY < 100) {
+        setActiveSection('home')
+        return
+      }
       
       // Update active section based on scroll position (only for hash links)
       const sections = navItems
         .filter(item => item.href.startsWith('#'))
         .map(item => item.href.replace('#', ''))
       
+      let foundSection = false
       for (const section of sections) {
         const element = document.getElementById(section)
         if (element) {
           const rect = element.getBoundingClientRect()
           if (rect.top <= 100 && rect.bottom >= 100) {
             setActiveSection(section)
+            foundSection = true
             break
           }
         }
+      }
+      
+      // If no section is in view and we're scrolled, keep the last active section
+      // or set to home if we're near the top
+      if (!foundSection && window.scrollY < 200) {
+        setActiveSection('home')
       }
     }
     
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [pathname])
 
   useEffect(() => {
     if (darkMode) {
@@ -58,6 +76,31 @@ export default function Navigation() {
     }
   }, [darkMode])
 
+  // Handle hash navigation when arriving at home page with hash
+  useEffect(() => {
+    if (pathname === '/' && typeof window !== 'undefined') {
+      const hash = window.location.hash
+      if (hash) {
+        // Wait for page to render, then scroll to section
+        setTimeout(() => {
+          const element = document.querySelector(hash)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+            // Update active section
+            const sectionId = hash.replace('#', '')
+            setActiveSection(sectionId)
+          }
+        }, 100)
+      } else {
+        // If no hash, set home as active
+        setActiveSection('home')
+      }
+    } else {
+      // If not on home page, clear active section
+      setActiveSection('')
+    }
+  }, [pathname])
+
   const scrollToSection = (href: string) => {
     // If it's a page route (starts with /), navigate using Next.js router
     if (href.startsWith('/')) {
@@ -65,7 +108,13 @@ export default function Navigation() {
       setMobileOpen(false)
       return
     }
-    // Otherwise, scroll to section
+    // Otherwise, it's a hash link - navigate to home first if not already there
+    if (pathname !== '/') {
+      router.push(`/${href}`)
+      setMobileOpen(false)
+      return
+    }
+    // If already on home page, scroll to section
     const element = document.querySelector(href)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
@@ -104,7 +153,7 @@ export default function Navigation() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg md:text-2xl font-bold bg-orange-500 bg-clip-text text-transparent">
+              <span className="nav-logo-text md:text-2xl font-bold bg-orange-500 bg-clip-text text-transparent">
                 Vrindavan Live
               </span>
               <span className={`hidden sm:block text-[10px] md:text-xs tracking-widest ${
@@ -119,7 +168,21 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => {
               const sectionId = item.href.startsWith('#') ? item.href.replace('#', '') : ''
-              const isActive = item.href.startsWith('#') ? activeSection === sectionId : false
+              // Check if active: 
+              // - For Home ("/"), only active if on home page AND at top (activeSection is 'home' or empty)
+              // - For hash links, only active if on home page AND scroll position matches
+              // - For other page routes, active if pathname matches
+              let isActive = false
+              if (item.href === '/') {
+                // Home is only active when on home page and at the top
+                isActive = pathname === '/' && (activeSection === 'home' || activeSection === '')
+              } else if (item.href.startsWith('#')) {
+                // Hash links are active when on home page and scroll position matches
+                isActive = pathname === '/' && activeSection === sectionId
+              } else {
+                // Page routes are active when pathname matches
+                isActive = pathname === item.href
+              }
               
               return (
                 <a
@@ -234,22 +297,45 @@ export default function Navigation() {
             className="lg:hidden bg-white dark:bg-gray-900 border-t border-border/50"
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-2">
-              {navItems.map((item, index) => (
-                <motion.a
-                  key={item.href}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    scrollToSection(item.href)
-                  }}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  className="text-lg md:text-xl font-semibold hover:text-saffron transition-colors py-2 px-4 rounded-lg hover:bg-muted"
-                >
-                  {item.label}
-                </motion.a>
-              ))}
+              {navItems.map((item, index) => {
+                const sectionId = item.href.startsWith('#') ? item.href.replace('#', '') : ''
+                // Check if active: 
+                // - For Home ("/"), only active if on home page AND at top (activeSection is 'home' or empty)
+                // - For hash links, only active if on home page AND scroll position matches
+                // - For other page routes, active if pathname matches
+                let isActive = false
+                if (item.href === '/') {
+                  // Home is only active when on home page and at the top
+                  isActive = pathname === '/' && (activeSection === 'home' || activeSection === '')
+                } else if (item.href.startsWith('#')) {
+                  // Hash links are active when on home page and scroll position matches
+                  isActive = pathname === '/' && activeSection === sectionId
+                } else {
+                  // Page routes are active when pathname matches
+                  isActive = pathname === item.href
+                }
+                
+                return (
+                  <motion.a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      scrollToSection(item.href)
+                    }}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    className={`text-lg md:text-xl font-semibold transition-colors py-2 px-4 rounded-lg ${
+                      isActive 
+                        ? "text-saffron bg-saffron/10" 
+                        : "hover:text-saffron hover:bg-muted"
+                    }`}
+                  >
+                    {item.label}
+                  </motion.a>
+                )
+              })}
               <Button
                 size="lg"
                 className="mt-4 bg-gradient-to-r from-saffron to-gold hover:from-saffron/90 hover:to-gold/90 text-white font-semibold w-full"

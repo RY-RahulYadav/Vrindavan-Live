@@ -115,22 +115,7 @@ export default function HeroCarousel() {
         top:'-50px'
       }}
     >
-      {/* Floating Diya Animation */}
-      <motion.div 
-        className="absolute top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-10 z-20 pointer-events-none"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-      >
-        <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16">
-          <Image
-            src="/traditional-indian-diya-oil-lamp-glowing-d409b3be-20251106081939.jpg"
-            alt="Diya"
-            fill
-            className="object-contain diya-flame"
-          />
-        </div>
-      </motion.div>
+     
 
       {/* Carousel Slides */}
       <AnimatePresence initial={false} custom={direction} mode="sync">
@@ -160,11 +145,12 @@ export default function HeroCarousel() {
                 console.error('Image load error:', currentSlideData.image)
               }}
             />
-            {/* Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div>
+            {/* Gradient Overlays - Lightened for clearer images */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/50"></div>
           </div>
-
+          {/* ient-to-b from-black/60 via-black/40 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div> */}
           {/* Content */}
           
         </motion.div>

@@ -101,7 +101,7 @@ export default function ServicesPage() {
       <Navigation />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-saffron/10 via-gold/5 to-background overflow-hidden mt-10">
+        <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-saffron/10 via-gold/5 to-background overflow-hidden xl:mt-10">
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -124,14 +124,16 @@ export default function ServicesPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-4xl mx-auto mb-8"
             >
-              <div className="relative h-64 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative h-64 md:h-96 rounded-3xl overflow-hidden shadow-2xl dark:shadow-saffron/20">
                 <Image
                   src="/radha_govind.jpg"
                   alt="Radha and Krishna"
                   fill
-                  className="object-cover"
+                  className="object-cover dark:brightness-110 dark:contrast-105 dark:saturate-110"
                   priority
                 />
+                {/* Dark mode overlay for better visibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent dark:from-black/40 dark:via-black/20 dark:to-transparent pointer-events-none"></div>
               </div>
             </motion.div>
 
@@ -207,7 +209,7 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-20 md:py-32 bg-gradient-to-r from-saffron via-gold to-peacock">
+        {/* <section className="relative py-20 md:py-32 bg-gradient-to-r from-saffron via-gold to-peacock">
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -242,7 +244,7 @@ export default function ServicesPage() {
               </div>
             </motion.div>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer />
     </div>

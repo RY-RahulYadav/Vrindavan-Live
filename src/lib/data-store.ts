@@ -63,9 +63,22 @@ export interface GalleryImage {
 export const dataStore = {
   carouselSlides: [
 
-
     {
       id: 2,
+      image: "/rn1.jpg",
+      title: "Sacred Nidhivan Grove",
+      subtitle: "Mystical Forest of Divine Love",
+      description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+    },
+    {
+      id: 31,
+      image: "/rn2.jpeg",
+      title: "Sacred Nidhivan Grove",
+      subtitle: "Mystical Forest of Divine Love",
+      description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+    },
+    {
+      id: 32,
       image: "/rk1.jpg",
       title: "Sacred Nidhivan Grove",
       subtitle: "Mystical Forest of Divine Love",

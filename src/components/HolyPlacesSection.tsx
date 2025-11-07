@@ -9,7 +9,7 @@ import Image from "next/image"
 
 export default function HolyPlacesSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" })
+  const isInView = useInView(ref, { once: false, amount: 0.05, margin: "0px" })
   const places = dataStore.holyPlaces
 
   if (!places || places.length === 0) {
@@ -21,16 +21,16 @@ export default function HolyPlacesSection() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="text-center mb-12 md:mb-16"
           style={{ willChange: 'transform, opacity' }}
         >
-          <span className="inline-block text-peacock text-base md:text-[28px] tracking-[0.3em] uppercase font-semibold mb-4">
+          <span className="inline-block text-peacock text-base md:text-[30px] max-[700px]:text-[22px] tracking-[0.3em] uppercase font-semibold mb-4">
             Sacred Locations
           </span>
-          <h2 className="text-4xl md:text-[32px] font-bold mb-6 bg-gradient-to-r from-peacock via-gold to-saffron bg-clip-text text-transparent">
+          <h2 className="max-[700px]:text-[32px] text-4xl md:text-[60px] font-bold mb-6 bg-gradient-to-r from-peacock via-gold to-saffron bg-clip-text text-transparent">
             Holy Places Around Vrindavan
           </h2>
           <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -43,9 +43,9 @@ export default function HolyPlacesSection() {
           {places && places.length > 0 && places.map((place, index) => (
             <motion.div
               key={place.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.08, ease: "easeOut" }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
               className="group"
               style={{ willChange: 'transform, opacity' }}
             >
@@ -105,9 +105,9 @@ export default function HolyPlacesSection() {
 
         {/* Call to Action */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="text-center mt-12 md:mt-16"
           style={{ willChange: 'transform, opacity' }}
         >

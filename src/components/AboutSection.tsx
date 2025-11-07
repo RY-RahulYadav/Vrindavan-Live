@@ -38,22 +38,22 @@ const stats = [
 
 export default function AboutSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" })
+  const isInView = useInView(ref, { once: false, amount: 0.05, margin: "0px" })
 
   return (
     <section id="about" ref={ref} className="relative py-16 sm:py-20 md:py-24 lg:py-32 about-section bg-gradient-to-b from-background via-ivory to-background overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="text-center mb-12 md:mb-16"
         >
-          <span className="inline-block text-saffron text-base md:text-[28px] tracking-[0.3em] uppercase font-semibold mb-4">
+          <span className="inline-block text-saffron text-base md:text-[30px] max-[700px]:text-[22px] tracking-[0.3em] uppercase font-semibold mb-4">
             Radha Krishna's Divine Abode
           </span>
-          <h2 className="text-4xl md:text-[32px] font-bold mb-6 bg-gradient-to-r from-saffron via-peacock to-gold bg-clip-text text-transparent">
+          <h2 className="max-[700px]:text-[32px] text-4xl md:text-[60px] font-bold mb-6 bg-gradient-to-r from-saffron via-peacock to-gold bg-clip-text text-transparent">
             About Vrindavan
           </h2>
           <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -65,9 +65,9 @@ export default function AboutSection() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center mb-12 sm:mb-16 md:mb-20">
           {/* Left: Images Collage */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+            initial={{ opacity: 1, x: 0 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
             className="relative"
             style={{ willChange: 'transform, opacity' }}
           >
@@ -79,6 +79,8 @@ export default function AboutSection() {
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 50vw"
+                  loading="eager"
+                  priority
                 />
               </div>
               <div className="relative h-48 sm:h-56 md:h-[320px] lg:h-[380px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
@@ -113,9 +115,9 @@ export default function AboutSection() {
 
           {/* Right: Content */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            initial={{ opacity: 1, x: 0 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
             className="space-y-4 sm:space-y-6"
             style={{ willChange: 'transform, opacity' }}
           >
@@ -143,9 +145,9 @@ export default function AboutSection() {
 
         {/* Images Above Features Grid - Desktop: Flex Row, Mobile: Single Image */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="mb-12 sm:mb-16 md:mb-20"
         >
           {/* Mobile: Single Image (rk0.jpg) */}
@@ -162,9 +164,9 @@ export default function AboutSection() {
           {/* Desktop: Flex Row with Both Images */}
           <div className="hidden sm:flex max-w-7xl mx-auto gap-4 sm:gap-6">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+              initial={{ opacity: 1, x: 0 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
               className="flex-1 relative h-64 sm:h-80 md:h-96 lg:h-[400px] rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
@@ -176,9 +178,9 @@ export default function AboutSection() {
               />
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
+              initial={{ opacity: 1, x: 0 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
               className="flex-1 relative h-64 sm:h-80 md:h-96 lg:h-[400px] rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
@@ -194,17 +196,17 @@ export default function AboutSection() {
 
         {/* Features Grid */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 md:mb-20"
         >
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 15 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.75 + index * 0.05, ease: "easeOut" }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
               className="group"
               style={{ willChange: 'transform, opacity' }}
             >
@@ -221,9 +223,9 @@ export default function AboutSection() {
 
         {/* Image Below Features Grid - Mobile Only */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="mb-12 sm:mb-16 md:mb-20 block sm:hidden"
         >
           <div className="max-w-5xl mx-auto relative h-64 rounded-2xl overflow-hidden shadow-2xl">
@@ -239,20 +241,20 @@ export default function AboutSection() {
 
         {/* Stats Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 1.0, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="max-w-6xl mx-auto bg-gradient-to-r from-saffron via-gold to-peacock rounded-3xl p-1"
           style={{ willChange: 'transform, opacity' }}
         >
           <div className="bg-card rounded-3xl p-6 sm:p-8 md:p-12">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="flex flex-col min-[430px]:grid min-[430px]:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.4, delay: 1.1 + index * 0.05, ease: "easeOut" }}
+                  initial={{ opacity: 1, scale: 1 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.15, ease: "easeOut" }}
                   className="text-center"
                   style={{ willChange: 'transform, opacity' }}
                 >

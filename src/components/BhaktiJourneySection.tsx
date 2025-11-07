@@ -46,10 +46,10 @@ const devotionalImages = [
 
 export default function BhaktiJourneySection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" })
+  const isInView = useInView(ref, { once: false, amount: 0.05, margin: "0px" })
 
   return (
-    <section id="bhakti-journey" ref={ref} className="relative pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-6 sm:pb-8 md:pb-10 bg-gradient-to-b from-muted via-background to-ivory overflow-hidden">
+    <section id="bhakti-journey" ref={ref} className="relative pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-6 sm:pb-8 md:pb-10 bg-gradient-to-b from-muted via-background to-ivory overflow-visible max-[700px]:overflow-visible">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -81,18 +81,18 @@ export default function BhaktiJourneySection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="text-center mb-8 sm:mb-12 md:mb-16"
+          transition={{ duration: 0.15, ease: "easeOut" }}
+          className="text-center mb-8 sm:mb-12 md:mb-16 max-[700px]:pt-4 sm:pt-0"
         >
-          <span className="inline-block text-gold text-sm sm:text-base md:text-[28px] tracking-[0.3em] uppercase font-semibold mb-3 sm:mb-4">
+          <span className="inline-block text-gold text-sm sm:text-base md:text-[30px] max-[700px]:text-[22px] tracking-[0.3em] uppercase font-semibold mb-3 sm:mb-4">
             Your Spiritual Path
           </span>
-          <h2 className="text-4xl md:text-[32px] font-bold mb-4 sm:mb-6 bg-gradient-to-r from-gold via-saffron to-peacock bg-clip-text text-transparent leading-tight">
+          <h2 className="max-[700px]:text-[32px] max-[700px]:leading-[1.4] max-[700px]:pt-3 max-[700px]:pb-2 max-[700px]:my-2 text-4xl md:text-[60px] font-bold mb-4 sm:mb-6 bg-gradient-to-r from-gold via-saffron to-peacock bg-clip-text text-transparent leading-tight px-2 sm:px-0 break-words overflow-visible">
             भक्ति मार्ग
           </h2>
-          <h2 className="text-3xl md:text-[32px] font-bold mb-4 sm:mb-6 bg-gradient-to-r from-gold via-saffron to-peacock bg-clip-text text-transparent">
+          <h2 className="max-[700px]:text-[32px] text-3xl md:text-[60px] font-bold mb-4 sm:mb-6 bg-gradient-to-r from-gold via-saffron to-peacock bg-clip-text text-transparent">
             The Bhakti Journey
           </h2>
           <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4 mb-4">
@@ -111,11 +111,10 @@ export default function BhaktiJourneySection() {
           {journeySteps.map((step, index) => (
             <motion.div
               key={step.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
               transition={{ 
-                duration: 0.6, 
-                delay: 0.3 + index * 0.15, 
+                duration: 0.15, 
                 ease: "easeOut"
               }}
               className={`group relative ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'} flex flex-col sm:flex-row gap-6 sm:gap-8 items-center`}
@@ -151,19 +150,18 @@ export default function BhaktiJourneySection() {
 
         {/* Large Devotional Images */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1, ease: "easeOut" }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8"
         >
           {devotionalImages.map((image, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 1, scale: 1 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
               transition={{ 
-                duration: 0.6, 
-                delay: 1.1 + index * 0.15, 
+                duration: 0.15, 
                 ease: "easeOut"
               }}
               className="group relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-gold/30 hover:border-gold/60 transition-all duration-500"

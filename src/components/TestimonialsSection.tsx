@@ -9,7 +9,7 @@ import Image from "next/image"
 
 export default function TestimonialsSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" })
+  const isInView = useInView(ref, { once: false, amount: 0.05, margin: "0px" })
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(1)
   const testimonials = dataStore.testimonials
@@ -37,16 +37,16 @@ export default function TestimonialsSection() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
           style={{ willChange: 'transform, opacity' }}
         >
-          <span className="inline-block text-peacock text-sm sm:text-base md:text-[28px] tracking-[0.2em] sm:tracking-[0.3em] uppercase font-semibold mb-3 sm:mb-4">
+          <span className="inline-block text-peacock text-sm sm:text-base md:text-[30px] max-[700px]:text-[22px] tracking-[0.2em] sm:tracking-[0.3em] uppercase font-semibold mb-3 sm:mb-4">
             Devotee Experiences
           </span>
-          <h2 className="text-4xl md:text-[32px] font-bold mb-4 sm:mb-6 bg-gradient-to-r from-peacock via-gold to-saffron bg-clip-text text-transparent px-4">
+          <h2 className="max-[700px]:text-[32px] text-4xl md:text-[60px] font-bold mb-4 sm:mb-6 bg-gradient-to-r from-peacock via-gold to-saffron bg-clip-text text-transparent px-4">
             Stories from the Heart
           </h2>
           <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
@@ -56,9 +56,9 @@ export default function TestimonialsSection() {
 
         {/* Testimonials Slider */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="max-w-5xl mx-auto relative px-4 sm:px-8 md:px-0"
           style={{ willChange: 'transform, opacity' }}
         >
@@ -86,10 +86,10 @@ export default function TestimonialsSection() {
                   <motion.div
                     key={testimonial.id}
                     custom={direction}
-                    initial={{ opacity: 0, x: direction > 0 ? 300 : -300 }}
+                    initial={{ opacity: 1, x: 0 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: direction > 0 ? -300 : 300 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    transition={{ duration: 0.15, ease: "easeOut" }}
                     className="bg-card/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl border border-border/50"
                   >
                 {/* Quote Icon */}

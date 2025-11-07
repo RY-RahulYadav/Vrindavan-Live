@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 
 export default function SaintsSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" })
+  const isInView = useInView(ref, { once: false, amount: 0.05, margin: "0px" })
   const [selectedSaint, setSelectedSaint] = useState<any>(null)
   const saints = dataStore.saints
 
@@ -19,16 +19,16 @@ export default function SaintsSection() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="text-center mb-12 md:mb-16"
           style={{ willChange: 'transform, opacity' }}
         >
-          <span className="inline-block text-gold text-base md:text-[28px] tracking-[0.3em] uppercase font-semibold mb-4">
+          <span className="inline-block text-gold text-base md:text-[30px] max-[700px]:text-[22px] tracking-[0.3em] uppercase font-semibold mb-4">
             Divine Souls
           </span>
-          <h2 className="text-4xl md:text-[32px] font-bold mb-6 bg-gradient-to-r from-gold via-saffron to-peacock bg-clip-text text-transparent">
+          <h2 className="max-[700px]:text-[32px] text-4xl md:text-[60px] font-bold mb-6 bg-gradient-to-r from-gold via-saffron to-peacock bg-clip-text text-transparent">
             Saints & Devotees
           </h2>
           <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -41,9 +41,9 @@ export default function SaintsSection() {
           {saints.map((saint, index) => (
             <motion.div
               key={saint.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
               className="group cursor-pointer"
               onClick={() => setSelectedSaint(saint)}
               style={{ willChange: 'transform, opacity' }}

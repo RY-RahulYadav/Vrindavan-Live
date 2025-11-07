@@ -38,7 +38,7 @@ const devotionalQuotes = [
 
 export default function DivineLoveSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" })
+  const isInView = useInView(ref, { once: false, amount: 0.05, margin: "0px" })
 
   return (
     <section id="divine-love" ref={ref} className="relative pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-6 sm:pb-8 md:pb-10 bg-gradient-to-b from-background via-saffron/5 to-background overflow-hidden">
@@ -52,18 +52,18 @@ export default function DivineLoveSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <span className="inline-block text-saffron text-sm sm:text-base md:text-[28px] tracking-[0.3em] uppercase font-semibold mb-3 sm:mb-4">
+          <span className="inline-block text-saffron text-sm sm:text-base md:text-[30px] max-[700px]:text-[22px] tracking-[0.3em] uppercase font-semibold mb-3 sm:mb-4">
             Eternal Divine Love
           </span>
-          <h2 className="text-4xl md:text-[32px] font-bold mb-4 sm:mb-6 bg-gradient-to-r from-saffron via-peacock to-gold bg-clip-text text-transparent leading-tight">
+          <h2 className="max-[700px]:text-[32px] text-4xl md:text-[60px] font-bold mb-4 sm:mb-6 bg-gradient-to-r from-saffron via-peacock to-gold bg-clip-text text-transparent leading-tight">
             श्री राधा कृष्ण
           </h2>
-          <h2 className="text-3xl md:text-[32px] font-bold mb-4 sm:mb-6 bg-gradient-to-r from-saffron via-peacock to-gold bg-clip-text text-transparent">
+          <h2 className="max-[700px]:text-[32px] text-3xl md:text-[60px] font-bold mb-4 sm:mb-6 bg-gradient-to-r from-saffron via-peacock to-gold bg-clip-text text-transparent">
             Radha & Krishna
           </h2>
           <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4 mb-4">
@@ -79,17 +79,17 @@ export default function DivineLoveSection() {
 
         {/* Devotional Quotes */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 md:mb-16"
         >
           {devotionalQuotes.map((quote, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.4, delay: 0.4 + index * 0.1, ease: "easeOut" }}
+              initial={{ opacity: 1, scale: 1 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
               className="bg-gradient-to-br from-saffron/10 via-gold/10 to-peacock/10 rounded-2xl p-4 sm:p-6 border border-saffron/20 hover:border-saffron/40 transition-all duration-300"
             >
               <quote.icon className="w-6 h-6 sm:w-8 sm:h-8 text-saffron mb-3 sm:mb-4" />
@@ -102,16 +102,16 @@ export default function DivineLoveSection() {
 
         {/* Large Featured Images - Devotional Display */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={isInView ? { opacity: 1 } : { opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="space-y-6 sm:space-y-8 md:space-y-12 mb-6 sm:mb-8"
         >
           {/* First Large Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 1, scale: 1 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
             className="group relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-saffron/30 hover:border-saffron/60 transition-all duration-500"
           >
             <Image
@@ -121,6 +121,7 @@ export default function DivineLoveSection() {
               className="object-cover group-hover:scale-105 transition-transform duration-700"
               sizes="100vw"
               priority
+              loading="eager"
             />
           </motion.div>
 
@@ -129,9 +130,9 @@ export default function DivineLoveSection() {
             {radhaKrishnaImages.slice(1, 3).map((image, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 + index * 0.1, ease: "easeOut" }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
                 className="group relative w-full h-[250px] sm:h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-2xl border-4 border-gold/30 hover:border-gold/60 transition-all duration-500"
               >
                 <Image
@@ -150,9 +151,9 @@ export default function DivineLoveSection() {
             {radhaKrishnaImages.slice(3, 6).map((image, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 1, scale: 1 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.9 + index * 0.1, ease: "easeOut" }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
                 className="group relative w-full h-[200px] sm:h-[280px] md:h-[350px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border-2 border-peacock/30 hover:border-peacock/60 transition-all duration-500"
               >
                 <Image
@@ -169,9 +170,9 @@ export default function DivineLoveSection() {
 
         {/* Devotional Message */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 1, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="mt-8 sm:mt-12 md:mt-16 mb-0 text-center"
         >
           <div className="bg-gradient-to-r from-saffron/20 via-gold/20 to-peacock/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 border-2 border-saffron/30 relative overflow-hidden">

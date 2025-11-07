@@ -11,7 +11,7 @@ const categories = ["All", "Temples", "Radha Krishna"]
 
 export default function GallerySection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1, margin: "-50px" })
+  const isInView = useInView(ref, { once: false, amount: 0.05, margin: "0px" })
   const [selectedCategory, setSelectedCategory] = useState("All")
   const images = dataStore.galleryImages
 
@@ -24,16 +24,16 @@ export default function GallerySection() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="text-center mb-8 md:mb-12"
           style={{ willChange: 'transform, opacity' }}
         >
-          <span className="inline-block text-gold text-base md:text-[28px] tracking-[0.3em] uppercase font-semibold mb-4">
+          <span className="inline-block text-gold text-base md:text-[30px] max-[700px]:text-[22px] tracking-[0.3em] uppercase font-semibold mb-4">
             Visual Journey
           </span>
-          <h2 className="text-4xl md:text-[32px] font-bold mb-6 bg-gradient-to-r from-gold via-saffron to-peacock bg-clip-text text-transparent">
+          <h2 className="max-[700px]:text-[32px] text-4xl md:text-[60px] font-bold mb-6 bg-gradient-to-r from-gold via-saffron to-peacock bg-clip-text text-transparent">
             Gallery
           </h2>
           <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -43,9 +43,9 @@ export default function GallerySection() {
 
         {/* Category Filter */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="flex flex-wrap justify-center gap-3 mb-8 md:mb-12"
           style={{ willChange: 'transform, opacity' }}
         >
@@ -67,18 +67,18 @@ export default function GallerySection() {
 
         {/* Masonry Grid */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+          initial={{ opacity: 1 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 1 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6"
           style={{ willChange: 'opacity' }}
         >
           {filteredImages.map((image, index) => (
             <motion.div
               key={image.id}
-              initial={{ opacity: 0, y: 15 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.3 + index * 0.05, ease: "easeOut" }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
               className="break-inside-avoid group"
               style={{ willChange: 'transform, opacity' }}
             >
@@ -98,9 +98,9 @@ export default function GallerySection() {
 
         {/* Load More Button */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="text-center mt-8 md:mt-12"
           style={{ willChange: 'transform, opacity' }}
         >

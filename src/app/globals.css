@@ -403,4 +403,13 @@ nextjs-portal {
   #bhakti-journey [class*="Flower"] {
     animation: devotional-pulse 3s ease-in-out infinite;
   }
+
+  /* Hide CC/caption button in video players */
+  video::-webkit-media-controls-toggle-closed-captions-button {
+    display: none !important;
+  }
+  
+  video::-webkit-media-controls-closed-captions-container {
+    display: none !important;
+  }
 }

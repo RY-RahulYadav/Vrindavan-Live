@@ -12,6 +12,7 @@ export default function HeroCarousel() {
   const [direction, setDirection] = useState(0)
   const [mounted, setMounted] = useState(false)
   const [headerHeight, setHeaderHeight] = useState(80)
+  const [isMobile, setIsMobile] = useState(false)
   // Filter out any invalid/undefined slides
   const slides = dataStore.carouselSlides.filter(slide => slide && slide.image && slide.title)
 
@@ -110,9 +111,8 @@ export default function HeroCarousel() {
     <section 
       className="relative w-full overflow-hidden bg-black hero-carousel-section" 
       style={{ 
-        marginTop: `${headerHeight}px`, 
-        height: `calc(100vh - ${headerHeight}px)`, 
-        top: '-50px'
+        marginTop: `${headerHeight + (isMobile ? 20 : 0)}px`, 
+        height: `calc(100vh - ${headerHeight + (isMobile ? 20 : 0)}px)`
       }}
     >
      

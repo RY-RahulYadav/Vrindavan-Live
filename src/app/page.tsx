@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection"
 import DivineLoveSection from "@/components/DivineLoveSection"
 import BhaktiJourneySection from "@/components/BhaktiJourneySection"
 import GallerySection from "@/components/GallerySection"
+import VideoSection from "@/components/VideoSection"
 import TemplesSection from "@/components/TemplesSection"
 import SaintsSection from "@/components/SaintsSection"
 import HolyPlacesSection from "@/components/HolyPlacesSection"
@@ -20,8 +21,9 @@ export default function Home() {
         <section id="home" className="relative">
           <HeroCarousel />
         </section>
-        <AboutSection />
         <GallerySection />
+        <VideoSection />
+        <AboutSection />
         <DivineLoveSection />
         <BhaktiJourneySection />
         

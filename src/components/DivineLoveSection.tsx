@@ -8,17 +8,17 @@ import Image from "next/image"
 
 const radhaKrishnaImages = [
   { src: "/radhakrishan1.jpg", alt: "Radha Krishna Divine Love" },
-  { src: "/radhakrishan2.jpg", alt: "Radha Krishna Eternal Union" },
-  { src: "/radhakrishan3.jpg", alt: "Radha Krishna Sacred Bond" },
-  { src: "/radhakrishan5.jpg", alt: "Radha Krishna Divine Play" },
-  { src: "/rk0.jpg", alt: "Radha Krishna Bliss" },
-  { src: "/rk1.jpg", alt: "Radha Krishna Devotion" },
-  { src: "/rk2.jpg", alt: "Radha Krishna Love" },
-  { src: "/rk3.jpg", alt: "Radha Krishna Together" },
-  { src: "/radhkrishan2.jpg", alt: "Radha Krishna Divine" },
-  { src: "/radhkrishan4.jpg", alt: "Radha Krishna Sacred" },
-  { src: "/radhkrishan6.jpg", alt: "Radha Krishna Eternal" },
-  { src: "/radha_govind.jpg", alt: "Radha Govind" },
+  { src: "/gallery/t1.jpg", alt: "Sacred Temple of Vrindavan" },
+  { src: "/hero/h2.jpeg", alt: "Radha Krishna Eternal Union" },
+  { src: "/gallery/t2.jpeg", alt: "Ancient Temple Architecture" },
+  { src: "/hero/h9.jpg", alt: "Radha Krishna Sacred Bond" },
+  { src: "/gallery/t3.jpg", alt: "Prem Mandir Night View" },
+  { src: "/hero/h4.jpeg", alt: "Radha Krishna Divine Play" },
+  { src: "/hero/h5.jpeg", alt: "Radha Krishna Bliss" },
+  { src: "/hero/h6.jpg", alt: "Radha Krishna Devotion" },
+  { src: "/hero/h7.jpg", alt: "Radha Krishna Love" },
+  { src: "/hero/h8.jpg", alt: "Radha Krishna Together" },
+  { src: "/gallery/t4.jpg", alt: "Banke Bihari Temple Morning" },
 ]
 
 const devotionalQuotes = [

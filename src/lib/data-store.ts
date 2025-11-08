@@ -415,22 +415,26 @@ export const dataStore = {
   ],
   galleryImages: [
     // Radha Krishna (6 images)
-    { "id": 1, "url": "/gallery/g1.jpg", "title": "Radha & Krishna Together 1", "category": "Radha Krishna" },
-    { "id": 2, "url": "/gallery/g2.jpg", "title": "Radha & Krishna Together 2", "category": "Radha Krishna" },
-    { "id": 3, "url": "/rk1.jpg", "title": "Radha & Krishna Together 1", "category": "Radha Krishna" },
-    { "id": 4, "url": "/rk2.jpg", "title": "Radha & Krishna Together 2", "category": "Radha Krishna" },
-    { "id": 5, "url": "/hero/h9.png", "title": "Radha & Krishna Together 5", "category": "Radha Krishna" },
-    { "id": 6, "url": "/hero/h8.jpg", "title": "Radha & Krishna Together 6", "category": "Radha Krishna" },
+    { "id": 1, "url": "/hero/h2.jpeg", "title": "Radha & Krishna Together 1", "category": "Radha Krishna" },
+    { "id": 2, "url": "/hero/h1.jpeg", "title": "Radha & Krishna Together 2", "category": "Radha Krishna" },
+    { "id": 3, "url": "/hero/h9.jpg", "title": "Radha & Krishna Together 1", "category": "Radha Krishna" },
+    { "id": 4, "url": "/hero/h10.jpg", "title": "Radha & Krishna Together 2", "category": "Radha Krishna" },
+    { "id": 5, "url": "/hero/h11.jpg", "title": "Radha & Krishna Together 5", "category": "Radha Krishna" },
+    { "id": 6, "url": "/hero/h3.jpeg", "title": "Radha & Krishna Together 6", "category": "Radha Krishna" },
+    { "id": 7, "url": "/hero/h4.jpeg", "title": "Radha & Krishna Together 6", "category": "Radha Krishna" },
+    { "id": 8, "url": "/hero/h14.jpg", "title": "Radha & Krishna Together 6", "category": "Radha Krishna" },
+    { "id": 9, "url": "/hero/h15.jpg", "title": "Radha & Krishna Together 6", "category": "Radha Krishna" },
+
 
     // Temples (6 images)
 
-    { "id": 7, "url": "/gallery/t1.jpg", "title": "Radha & Krishna Together 3", "category": "Temples" },
+    { "id": 10, "url": "/gallery/t1.jpg", "title": "Radha & Krishna Together 3", "category": "Temples" },
     
-    { "id": 8, "url": "/gallery/t2.jpeg", "title": "Radha & Krishna Together 4", "category": "Temples" },
-    { "id": 9, "url": "/gallery/t3.jpg", "title": "Prem Mandir Night View", "category": "Temples" },
-    { "id": 10, "url": "/gallery/t4.jpg", "title": "Banke Bihari Temple Morning", "category": "Temples" },
-    { "id": 11, "url": "/gallery/t5.jpg", "title": "ISKCON Temple Exterior", "category": "Temples" },
-    { "id": 12, "url": "/gallery/t6.jpg", "title": "Radha Raman Temple Vrindavan", "category": "Temples" },
+    { "id": 11, "url": "/hero/h3.jpg", "title": "Radha & Krishna Together 4", "category": "Temples" },
+    { "id": 12, "url": "/gallery/t3.jpg", "title": "Prem Mandir Night View", "category": "Temples" },
+    { "id": 13, "url": "/gallery/t4.jpg", "title": "Banke Bihari Temple Morning", "category": "Temples" },
+    { "id": 14, "url": "/gallery/t5.jpg", "title": "ISKCON Temple Exterior", "category": "Temples" },
+    { "id": 15, "url": "/gallery/t6.jpg", "title": "Radha Raman Temple Vrindavan", "category": "Temples" },
     // { "id": 11, "url": "URL-to-Temple5.jpg",        "title": "Madan Mohan Temple Vrindavan",     "category": "Temples" },
     // { "id": 12, "url": "URL-to-Temple6.jpg",        "title": "Govind Dev ji Temple Mathura",      "category": "Temples" },
 

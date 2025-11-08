@@ -11,37 +11,37 @@ const journeySteps = [
     icon: Heart,
     title: "Surrender",
     description: "Offer your heart completely to the divine, just as Radha surrendered everything to Krishna",
-    image: "/radhakrishan1.jpg",
+    image: "/hero/h1.jpeg",
     color: "from-saffron/20 to-saffron/5"
   },
   {
     icon: Music2,
     title: "Chant",
     description: "Sing the holy names and feel the divine presence in every moment of devotion",
-    image: "/radhakrishan2.jpg",
+    image: "/gallery/t1.jpg",
     color: "from-peacock/20 to-peacock/5"
   },
   {
     icon: Flower2,
     title: "Serve",
     description: "Serve with love and humility, following the path of selfless devotion",
-    image: "/radhakrishan3.jpg",
+    image: "/hero/h2.jpeg",
     color: "from-gold/20 to-gold/5"
   },
   {
     icon: Sparkles,
     title: "Realize",
     description: "Experience the eternal bliss of divine love and spiritual awakening",
-    image: "/radhakrishan5.jpg",
+    image: "/gallery/t2.jpeg",
     color: "from-saffron/20 via-peacock/20 to-gold/20"
   }
 ]
 
 const devotionalImages = [
-  { src: "/rk0.jpg", alt: "Divine Devotion" },
-  { src: "/rk1.jpg", alt: "Spiritual Journey" },
-  { src: "/rk2.jpg", alt: "Eternal Love" },
-  { src: "/rk3.jpg", alt: "Pure Bhakti" },
+  { src: "/hero/h3.jpeg", alt: "Divine Devotion" },
+  { src: "/gallery/t3.jpg", alt: "Spiritual Journey" },
+  { src: "/hero/h4.jpeg", alt: "Eternal Love" },
+  { src: "/gallery/t4.jpg", alt: "Pure Bhakti" },
 ]
 
 export default function BhaktiJourneySection() {

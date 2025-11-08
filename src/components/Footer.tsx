@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Heart } from "lucide-react"
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Heart, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Image from "next/image"
@@ -72,10 +72,14 @@ export default function Footer() {
             
             {/* Contact Info */}
             <div className="mt-6 space-y-2">
-              <div className="flex items-center gap-2 text-xl md:text-[20px] text-muted-foreground">
+              <a href="tel:+918700661267" className="flex items-center gap-2 text-xl md:text-[20px] text-muted-foreground hover:text-saffron transition-colors">
                 <Phone className="w-5 h-5 md:w-7 md:h-7 text-saffron" />
                 <span>+91 87006 61267</span>
-              </div>
+              </a>
+              <a href="https://wa.me/918700661267" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xl md:text-[20px] text-muted-foreground hover:text-saffron transition-colors">
+                <MessageCircle className="w-5 h-5 md:w-7 md:h-7 text-saffron" />
+                <span>+91 87006 61267</span>
+              </a>
               <div className="flex items-center gap-2 text-xl md:text-[20px] text-muted-foreground">
                 <Mail className="w-5 h-5 md:w-7 md:h-7 text-saffron" />
                 <span>info@vrindavanlive.com</span>
@@ -176,31 +180,31 @@ export default function Footer() {
         </div> */}
 
         {/* Bottom Section */}
-        <div className="py-6 sm:py-8 border-t border-border/50">
+        <div className="py-6 sm:py-8 max-[700px]:pb-20 border-t border-border/50">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
             {/* Social Links */}
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-              <span className="text-xl md:text-[22px] text-muted-foreground font-medium">Follow Us:</span>
+            <div className="flex flex-col max-[700px]:flex-col sm:flex-row items-center gap-3 sm:gap-4">
+              <span className="max-[700px]:text-lg text-xl md:text-[22px] text-muted-foreground font-medium">Follow Us:</span>
               <div className="flex items-center gap-2 sm:gap-3">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-muted hover:bg-saffron text-muted-foreground hover:text-white transition-all duration-300 flex items-center justify-center group border border-border hover:border-saffron"
+                    className="max-[700px]:w-10 max-[700px]:h-10 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-muted hover:bg-saffron text-muted-foreground hover:text-white transition-all duration-300 flex items-center justify-center group border border-border hover:border-saffron"
                   >
-                    <social.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />
+                    <social.icon className="max-[700px]:w-5 max-[700px]:h-5 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />
                   </a>
                 ))}
               </div>
             </div>
 
             {/* Copyright */}
-            <div className="text-center md:text-right flex-shrink-0">
-              <p className="text-xl md:text-[20px] text-muted-foreground flex items-center gap-2 justify-center md:justify-end">
-                Made with <Heart className="w-5 h-5 md:w-7 md:h-7 text-saffron fill-saffron animate-pulse" /> for Krishna Devotees
+            <div className="text-center md:text-right flex-shrink-0 max-[700px]:w-full">
+              <p className="max-[700px]:text-lg max-[700px]:flex-col max-[700px]:items-center text-xl md:text-[20px] text-muted-foreground flex items-center gap-2 justify-center md:justify-end">
+                <span className="max-[700px]:block">Made with</span> <Heart className="max-[700px]:w-5 max-[700px]:h-5 w-5 h-5 md:w-7 md:h-7 text-saffron fill-saffron animate-pulse" /> <span className="max-[700px]:block">for Krishna Devotees</span>
               </p>
-              <p className="text-xl md:text-[20px] text-muted-foreground/70 mt-1 text-center md:text-right">
+              <p className="max-[700px]:text-sm max-[700px]:mt-2 max-[700px]:mb-4 text-xl md:text-[20px] text-muted-foreground/70 mt-1 text-center md:text-right">
                 © {new Date().getFullYear()} Vrindavan Live. All rights reserved.
               </p>
             </div>

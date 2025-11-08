@@ -147,8 +147,8 @@ export default function HeroCarousel() {
               }}
             />
             {/* Gradient Overlays - Lightened for clearer images */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/60"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/50"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/20"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/20"></div>
           </div>
           {/* ient-to-b from-black/60 via-black/40 to-black/70"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50"></div> */}

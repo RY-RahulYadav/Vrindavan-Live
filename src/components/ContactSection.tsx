@@ -121,7 +121,7 @@ export default function ContactSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale hover:grayscale-0 transition-all duration-500"
+                className=""
               ></iframe>
             </motion.div> */}
           </motion.div>
@@ -230,7 +230,7 @@ export default function ContactSection() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="grayscale hover:grayscale-0 transition-all duration-500 w-full h-full"
+                    className="w-full h-full"
                 ></iframe>
               </div>
             </div>
@@ -239,21 +239,21 @@ export default function ContactSection() {
       </div>
 
       {/* Fixed Call and WhatsApp Buttons - Mobile Only */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 flex sm:hidden border-t border-border/20">
+      <div className="fixed bottom-0 left-0 right-0 z-50 hidden max-[700px]:flex border-t border-border/20 bg-background">
         <a
           href="tel:+918700661267"
-          className="flex-1 bg-gradient-to-r from-saffron to-gold hover:from-saffron/90 hover:to-gold/90 text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-base md:text-lg"
+          className="flex-1 bg-[#F28C28] hover:bg-[#E07A1F] border-r border-border/20 text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 text-base"
         >
-          <Phone className="w-4 h-4" />
+          <Phone className="w-5 h-5 text-white" />
           <span>Call Now</span>
         </a>
         <a
           href="https://wa.me/918700661267"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 bg-gradient-to-r from-green-700 to-green-600 hover:from-green-800 hover:to-green-700 text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-base md:text-lg"
+          className="flex-1 bg-[#FFE4D6] hover:bg-[#FFD9C7] text-foreground font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 text-base"
         >
-          <MessageCircle className="w-4 h-4" />
+          <MessageCircle className="w-5 h-5" style={{ color: '#25D366' }} />
           <span>WhatsApp</span>
         </a>
       </div>

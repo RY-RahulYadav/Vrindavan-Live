@@ -133,8 +133,8 @@ export default function Navigation() {
           : "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md"
       }`}
     >
-      <div className="container mx-auto max-[310px]:px-2 px-4 lg:px-6 xl:px-8 py-4 md:py-6">
-        <div className="flex items-center justify-between max-[310px]:gap-1 gap-2 md:gap-3 xl:gap-4">
+      <div className="container mx-auto max-[310px]:px-2 max-[370px]:px-2 px-4 lg:px-6 xl:px-8 py-4 md:py-6">
+        <div className="flex items-center justify-between max-[310px]:gap-1 max-[370px]:gap-1 gap-2 md:gap-3 xl:gap-4">
           {/* Logo */}
           <a 
             href="#home" 
@@ -142,9 +142,9 @@ export default function Navigation() {
               e.preventDefault()
               scrollToSection("#home")
             }}
-            className="flex items-center max-[700px]:gap-0.5 max-[310px]:gap-0 gap-1 md:gap-1.5 xl:gap-2 group flex-shrink-0 min-w-0"
+            className="flex items-center max-[700px]:gap-0.5 max-[310px]:gap-0 max-[370px]:gap-0.5 gap-1 md:gap-1.5 xl:gap-2 group flex-shrink-0 min-w-0"
           >
-            <div className="relative w-12 h-12 md:w-20 md:h-20 flex-shrink-0">
+            <div className="relative max-[370px]:w-14 max-[370px]:h-14 min-[370px]:max-[400px]:w-16 min-[370px]:max-[400px]:h-16 w-12 h-12 min-[650px]:w-16 min-[650px]:h-16 max-[770px]:w-16 max-[770px]:h-16 md:w-20 md:h-20 flex-shrink-0">
               <Image
                 src="/logo.png"
                 alt="Vrindavan Live Logo"
@@ -153,7 +153,7 @@ export default function Navigation() {
               />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="text-[22px] sm:text-xl md:text-[24px] lg:text-[26px] xl:text-[28px] font-bold bg-gradient-to-r from-saffron via-gold to-peacock bg-clip-text text-transparent whitespace-nowrap">
+              <span className="max-[370px]:text-[22px] text-[23px] sm:text-xl min-[650px]:text-[26px] max-[770px]:text-[26px] md:text-[24px] lg:text-[26px] xl:text-[28px] font-bold bg-gradient-to-r from-saffron via-gold to-peacock bg-clip-text text-transparent whitespace-nowrap">
                 Vrindavan Live
               </span>
               <span className={`hidden sm:block text-[10px] md:text-xs lg:text-sm tracking-widest ${
@@ -213,7 +213,7 @@ export default function Navigation() {
           </div>
 
           {/* Right Side Actions */}
-          <div className="flex items-center max-[310px]:gap-1 gap-1.5 md:gap-2 xl:gap-3 flex-shrink-0">
+          <div className="flex items-center max-[310px]:gap-1 max-[400px]:gap-0.5 gap-1.5 md:gap-2 xl:gap-3 flex-shrink-0">
             <Button
               variant="ghost"
               size="icon"

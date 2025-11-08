@@ -20,7 +20,8 @@ export default function GallerySection() {
     : images.filter(img => img.category === selectedCategory)
 
   return (
-    <section id="gallery" ref={ref} className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-ivory via-background to-muted overflow-hidden">
+   
+      <section id="about" ref={ref} className="relative mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-16 sm:py-20 md:py-24 lg:py-32 about-section bg-gradient-to-b from-background via-ivory to-background overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div

@@ -123,16 +123,30 @@ export default function Navigation() {
   }
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-border/50" 
-          : "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md"
-      }`}
-    >
+    <div className="fixed top-0 left-0 right-0 z-50">
+      {/* Radhe Radhe Banner */}
+      <motion.div
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 text-center py-1.5 md:py-2 text-xs md:text-sm font-semibold tracking-wide"
+      >
+        <div className="container mx-auto px-4">
+          <span className="text-2xl md:text-3xl lg:text-4xl font-bold">राधे राधे</span>
+        </div>
+      </motion.div>
+
+      {/* Main Navigation */}
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className={`transition-all duration-300 ${
+          scrolled 
+            ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-border/50" 
+            : "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md"
+        }`}
+      >
       <div className="container mx-auto max-[310px]:px-2 max-[370px]:px-2 px-4 lg:px-6 xl:px-8 py-4 md:py-6">
         <div className="flex items-center justify-between max-[310px]:gap-1 max-[370px]:gap-1 gap-2 md:gap-3 xl:gap-4">
           {/* Logo */}
@@ -347,5 +361,6 @@ export default function Navigation() {
         )}
       </AnimatePresence>
     </motion.nav>
+    </div>
   )
 }

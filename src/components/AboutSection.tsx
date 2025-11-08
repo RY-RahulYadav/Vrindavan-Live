@@ -41,7 +41,7 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: false, amount: 0.05, margin: "0px" })
 
   return (
-    <section id="about" ref={ref} className="relative py-16 sm:py-20 md:py-24 lg:py-32 about-section bg-gradient-to-b from-background via-ivory to-background overflow-hidden">
+    <section id="gallery" ref={ref} className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-ivory via-background to-muted overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -74,7 +74,7 @@ export default function AboutSection() {
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div className="relative h-48 sm:h-56 md:h-[320px] lg:h-[380px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
                 <Image
-                  src="/radhakrishan1.jpg"
+                  src="/hero/h2.jpeg"
                   alt="Radha Krishna Divine"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"
@@ -85,7 +85,7 @@ export default function AboutSection() {
               </div>
               <div className="relative h-48 sm:h-56 md:h-[320px] lg:h-[380px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
                 <Image
-                  src="/hero/h1.jpeg"
+                  src="/hero/h4.jpeg"
                   alt="Radha Krishna Leela"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"
@@ -94,7 +94,7 @@ export default function AboutSection() {
               </div>
               <div className="relative h-48 sm:h-56 md:h-[320px] lg:h-[380px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
                 <Image
-                  src="/radha_govind.jpg"
+                  src="/hero/h3.jpeg"
                   alt="Radha Govind"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"
@@ -153,7 +153,7 @@ export default function AboutSection() {
           {/* Mobile: Single Image (rk0.jpg) */}
           <div className="block sm:hidden max-w-5xl mx-auto relative h-64 rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/hero/h9.png"
+              src="/hero/h6.jpg"
               alt="Radha Krishna Divine"
               fill
               className="object-cover"
@@ -170,7 +170,7 @@ export default function AboutSection() {
               className="flex-1 relative h-64 sm:h-80 md:h-96 lg:h-[400px] rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="/rk0.jpg"
+                src="/hero/h3.jpg"
                 alt="Radha Krishna Divine"
                 fill
                 className="object-cover hover:scale-110 transition-transform duration-500"
@@ -184,7 +184,7 @@ export default function AboutSection() {
               className="flex-1 relative h-64 sm:h-80 md:h-96 lg:h-[400px] rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="/radha-raman.jpg"
+                src="/hero/h5.jpeg"
                 alt="Radha Raman"
                 fill
                 className="object-cover hover:scale-110 transition-transform duration-500"
@@ -230,7 +230,7 @@ export default function AboutSection() {
         >
           <div className="max-w-5xl mx-auto relative h-64 rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/hero/h6.jpg"
+              src="/hero/h3.jpg"
               alt="Radha Raman"
               fill
               className="object-cover"

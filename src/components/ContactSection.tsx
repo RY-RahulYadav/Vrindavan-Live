@@ -40,7 +40,7 @@ export default function ContactSection() {
     {
       icon: MapPin,
       title: "Address",
-      details: ["Gautam pada chauraha", "Near gaudiya math temple", "Vrindavan, Mathura District", "Uttar Pradesh, India - 281121"],
+      details: ["Gautam pada chauraha", "Near gaudiya math temple", "Vrindavan", "Uttar Pradesh, India"],
       color: "from-gold to-yellow-600"
     }
   ]

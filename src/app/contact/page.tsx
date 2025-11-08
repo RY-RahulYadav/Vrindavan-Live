@@ -90,7 +90,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="max-[700px]:space-y-4 space-y-6"
+                className="max-[700px]:space-y-4 space-y-6 contact-info-section"
               >
                 <h2 className="max-[700px]:text-[32px] max-[700px]:mb-4 text-4xl md:text-[60px] font-bold mb-8 text-foreground">
                   Contact Information
@@ -111,7 +111,7 @@ export default function ContactPage() {
                         <div className="flex-1 min-w-0 overflow-hidden">
                           <h3 className="max-[700px]:text-lg text-2xl md:text-[25px] font-bold mb-1 sm:mb-2 text-foreground break-words">{info.title}</h3>
                           {info.details.map((detail, idx) => (
-                            <p key={idx} className="max-[700px]:text-base text-xl md:text-[22px] text-muted-foreground break-words">
+                            <p key={idx} className="max-[700px]:text-[18px] text-xl md:text-[22px] text-muted-foreground break-words">
                               {detail}
                             </p>
                           ))}

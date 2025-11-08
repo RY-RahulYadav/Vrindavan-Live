@@ -95,7 +95,7 @@ export default function ContactSection() {
                       <div className="flex-1 min-w-0 overflow-hidden">
                         <h3 className="text-lg sm:text-xl md:text-2xl lg:text-[25px] font-bold mb-1 sm:mb-2 text-foreground break-words">{info.title}</h3>
                         {info.details.map((detail, idx) => (
-                          <p key={idx} className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px] text-muted-foreground break-words">
+                          <p key={idx} className="max-[700px]:text-[18px] text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px] text-muted-foreground break-words">
                             {detail}
                           </p>
                         ))}

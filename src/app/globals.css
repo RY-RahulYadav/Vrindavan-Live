@@ -263,7 +263,77 @@ html {
 
 /* Section Spacing */
 section {
-  padding: 3rem 0;
+  padding: 2rem 0;
+}
+
+/* Mobile Optimizations - Below 600px */
+@media (max-width: 600px) {
+  section {
+    padding: 2rem 0;
+    min-height: auto;
+  }
+  
+  /* About section keeps larger padding on mobile */
+  .about-section {
+    padding: 0rem 0 !important;
+    padding-bottom: 2rem !important;
+    position: relative !important;
+    top: -25px !important;
+  }
+  
+  /* Reduce carousel height on mobile for better image fit */
+  .hero-carousel-section {
+    height: 80vh !important;
+    max-height: 80vh !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    /* font-size: 1.75rem; */
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  body {
+    font-size: 16px;
+  }
+
+  /* Enhanced mobile spacing for new devotional sections only */
+  #divine-love,
+  #bhakti-journey {
+    padding-top: 3rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+}
+
+
+/* Animation Performance Optimizations */
+@supports (will-change: transform) {
+  [data-animate] {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Navigation Logo Text Responsive Sizes */
@@ -300,4 +370,29 @@ section {
 /* Hide Next.js error overlay portal */
 nextjs-portal {
   display: none !important;
+}
+
+/* Devotional Animations for New Sections Only */
+@media (max-width: 768px) {
+  /* Subtle pulse for devotional elements in new sections */
+  @keyframes devotional-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+  }
+
+  /* Apply to devotional icons only in new sections */
+  #divine-love [class*="Heart"],
+  #divine-love [class*="Sparkles"],
+  #divine-love [class*="Flower"],
+  #bhakti-journey [class*="Heart"],
+  #bhakti-journey [class*="Sparkles"],
+  #bhakti-journey [class*="Flower"] {
+    animation: devotional-pulse 3s ease-in-out infinite;
+  }
 }

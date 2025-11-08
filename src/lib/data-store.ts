@@ -61,39 +61,149 @@ export interface GalleryImage {
 
 // Initial data with authentic Vrindavan content
 export const dataStore = {
+  // carouselSlides: [
+
+  //   {
+  //     id: 2,
+  //     image: "/rn1.jpg",
+  //     title: "Sacred Nidhivan Grove",
+  //     subtitle: "Mystical Forest of Divine Love",
+  //     description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+  //   },
+  //   {
+  //     id: 31,
+  //     image: "/rn2.jpeg",
+  //     title: "Sacred Nidhivan Grove",
+  //     subtitle: "Mystical Forest of Divine Love",
+  //     description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+  //   },
+  //   {
+  //     id: 32,
+  //     image: "/rk1.jpg",
+  //     title: "Sacred Nidhivan Grove",
+  //     subtitle: "Mystical Forest of Divine Love",
+  //     description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+  //   },
+  //   {
+  //     id: 31,
+  //     image: "/rk0.jpg",
+  //     title: "Sacred Nidhivan Grove",
+  //     subtitle: "Mystical Forest of Divine Love",
+  //     description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+  //   },
+  //   {
+  //     id: 4,
+  //     image: "/rk.jpg",
+  //     title: "Sacred Nidhivan Grove",
+  //     subtitle: "Mystical Forest of Divine Love",
+  //     description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+  //   },
+  //   {
+  //     id: 1,
+  //     image: "/hero3.jpg",
+  //     title: "Welcome to Vrindavan Live",
+  //     subtitle: "The Divine City of Lord Krishna",
+  //     description: "Experience the eternal bliss and divine love where Krishna performed His sacred pastimes"
+  //   },
+  //   {
+  //     id: 5,
+  //     image: "/rk2.jpg",
+  //     title: "Sacred Nidhivan Grove",
+  //     subtitle: "Mystical Forest of Divine Love",
+  //     description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+  //   },
+  //   {
+  //     id: 6,
+  //     image: "/rk3.jpg",
+  //     title: "Sacred Nidhivan Grove",
+  //     subtitle: "Mystical Forest of Divine Love",
+  //     description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+  //   },
+  //   {
+  //     id: 7,
+  //     image: "/radhkrishan2.jpg",
+  //     title: "Sacred Temples of Vrindavan",
+  //     subtitle: "Divine Architecture & Devotion",
+  //     description: "Discover magnificent temples where millions of devotees find peace and spiritual awakening"
+  //   },
+  //   {
+  //     id: 8,
+  //     image: "/ab3.webp",
+  //     title: "Journey to Enlightenment",
+  //     subtitle: "Path of Pure Devotion",
+  //     description: "Walk the sacred ghats and forests where every moment is a prayer to the divine"
+  //   },
+  //   {
+  //     id: 9,
+  //     image: "/radhakrishan5.jpg",
+  //     title: "Journey to Enlightenment",
+  //     subtitle: "Path of Pure Devotion",
+  //     description: "Walk the sacred ghats and forests where every moment is a prayer to the divine"
+  //   },
+  //   {
+  //     id: 10,
+  //     image: "/radhakrishan1.jpg",
+  //     title: "Journey to Enlightenment",
+  //     subtitle: "Path of Pure Devotion",
+  //     description: "Walk the sacred ghats and forests where every moment is a prayer to the divine"
+  //   },
+  //   {
+  //     id: 11,
+  //     image: "/hero4.jpg",
+  //     title: "Sacred Nidhivan Grove",
+  //     subtitle: "Mystical Forest of Divine Love",
+  //     description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+  //   }
+
+
+  // ],
   carouselSlides: [
 
     {
+      id: 1,
+      image: "/hero/h1.jpeg",
+      title: "Sacred Nidhivan Grove",
+      subtitle: "Mystical Forest of Divine Love",
+      description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+    },
+    {
       id: 2,
-      image: "/rn1.jpg",
+      image: "/hero/h2.jpeg",
       title: "Sacred Nidhivan Grove",
       subtitle: "Mystical Forest of Divine Love",
       description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
     },
     {
-      id: 31,
-      image: "/rn2.jpeg",
-      title: "Sacred Nidhivan Grove",
-      subtitle: "Mystical Forest of Divine Love",
-      description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
-    },
-    {
-      id: 32,
-      image: "/rk1.jpg",
-      title: "Sacred Nidhivan Grove",
-      subtitle: "Mystical Forest of Divine Love",
-      description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
-    },
-    {
-      id: 31,
-      image: "/rk0.jpg",
+      id: 3,
+      image: "/hero/h3.jpeg",
       title: "Sacred Nidhivan Grove",
       subtitle: "Mystical Forest of Divine Love",
       description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
     },
     {
       id: 4,
-      image: "/rk.jpg",
+      image: "/hero/h4.jpeg",
+      title: "Sacred Nidhivan Grove",
+      subtitle: "Mystical Forest of Divine Love",
+      description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+    },
+    {
+      id: 4,
+      image: "/hero/h5.jpeg",
+      title: "Sacred Nidhivan Grove",
+      subtitle: "Mystical Forest of Divine Love",
+      description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+    },
+    {
+      id: 4,
+      image: "/hero/h6.jpg",
+      title: "Sacred Nidhivan Grove",
+      subtitle: "Mystical Forest of Divine Love",
+      description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
+    },
+    {
+      id: 4,
+      image: "/hero/h8.jpg",
       title: "Sacred Nidhivan Grove",
       subtitle: "Mystical Forest of Divine Love",
       description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
@@ -105,34 +215,7 @@ export const dataStore = {
       subtitle: "The Divine City of Lord Krishna",
       description: "Experience the eternal bliss and divine love where Krishna performed His sacred pastimes"
     },
-    {
-      id: 5,
-      image: "/rk2.jpg",
-      title: "Sacred Nidhivan Grove",
-      subtitle: "Mystical Forest of Divine Love",
-      description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
-    },
-    {
-      id: 6,
-      image: "/rk3.jpg",
-      title: "Sacred Nidhivan Grove",
-      subtitle: "Mystical Forest of Divine Love",
-      description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
-    },
-    {
-      id: 7,
-      image: "/radhkrishan2.jpg",
-      title: "Sacred Temples of Vrindavan",
-      subtitle: "Divine Architecture & Devotion",
-      description: "Discover magnificent temples where millions of devotees find peace and spiritual awakening"
-    },
-    {
-      id: 8,
-      image: "/ab3.webp",
-      title: "Journey to Enlightenment",
-      subtitle: "Path of Pure Devotion",
-      description: "Walk the sacred ghats and forests where every moment is a prayer to the divine"
-    },
+   
     {
       id: 9,
       image: "/radhakrishan5.jpg",
@@ -146,13 +229,6 @@ export const dataStore = {
       title: "Journey to Enlightenment",
       subtitle: "Path of Pure Devotion",
       description: "Walk the sacred ghats and forests where every moment is a prayer to the divine"
-    },
-    {
-      id: 11,
-      image: "/hero4.jpg",
-      title: "Sacred Nidhivan Grove",
-      subtitle: "Mystical Forest of Divine Love",
-      description: "Where Lord Krishna dances with Radha under the moonlight — a place of eternal mystery"
     }
 
 
@@ -343,11 +419,13 @@ export const dataStore = {
     { "id": 2, "url": "/gallery/g2.jpg", "title": "Radha & Krishna Together 2", "category": "Radha Krishna" },
     { "id": 3, "url": "/rk1.jpg", "title": "Radha & Krishna Together 1", "category": "Radha Krishna" },
     { "id": 4, "url": "/rk2.jpg", "title": "Radha & Krishna Together 2", "category": "Radha Krishna" },
-    { "id": 5, "url": "/gallery/g3.jpeg", "title": "Radha & Krishna Together 5", "category": "Radha Krishna" },
-    { "id": 6, "url": "/gallery/g5.jpg", "title": "Radha & Krishna Together 6", "category": "Radha Krishna" },
+    { "id": 5, "url": "/hero/h9.png", "title": "Radha & Krishna Together 5", "category": "Radha Krishna" },
+    { "id": 6, "url": "/hero/h8.jpg", "title": "Radha & Krishna Together 6", "category": "Radha Krishna" },
 
     // Temples (6 images)
+
     { "id": 7, "url": "/gallery/t1.jpg", "title": "Radha & Krishna Together 3", "category": "Temples" },
+    
     { "id": 8, "url": "/gallery/t2.jpeg", "title": "Radha & Krishna Together 4", "category": "Temples" },
     { "id": 9, "url": "/gallery/t3.jpg", "title": "Prem Mandir Night View", "category": "Temples" },
     { "id": 10, "url": "/gallery/t4.jpg", "title": "Banke Bihari Temple Morning", "category": "Temples" },

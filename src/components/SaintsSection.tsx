@@ -10,27 +10,28 @@ import { Button } from "@/components/ui/button"
 
 export default function SaintsSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { once: false, amount: 0.05, margin: "0px" })
   const [selectedSaint, setSelectedSaint] = useState<any>(null)
   const saints = dataStore.saints
 
   return (
-    <section id="saints" ref={ref} className="relative py-20 md:py-32 bg-gradient-to-b from-muted via-background to-muted overflow-hidden">
+    <section id="saints" ref={ref} className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-muted via-background to-muted overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
+          className="text-center mb-12 md:mb-16"
+          style={{ willChange: 'transform, opacity' }}
         >
-          <span className="inline-block text-gold text-sm md:text-base tracking-[0.3em] uppercase font-semibold mb-4">
+          <span className="inline-block text-gold text-base md:text-[30px] max-[700px]:text-[22px] tracking-[0.3em] uppercase font-semibold mb-4">
             Divine Souls
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-gold via-saffron to-peacock bg-clip-text text-transparent">
+          <h2 className="max-[700px]:text-[32px] text-4xl md:text-[60px] font-bold mb-6 bg-gradient-to-r from-gold via-saffron to-peacock bg-clip-text text-transparent">
             Saints & Devotees
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Learn about the great saints and devotees who dedicated their lives to Krishna and established Vrindavan's spiritual legacy
           </p>
         </motion.div>
@@ -40,11 +41,12 @@ export default function SaintsSection() {
           {saints.map((saint, index) => (
             <motion.div
               key={saint.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
               className="group cursor-pointer"
               onClick={() => setSelectedSaint(saint)}
+              style={{ willChange: 'transform, opacity' }}
             >
               <div className="relative bg-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50 hover:border-gold/50">
                 {/* Saint Image */}
@@ -67,13 +69,13 @@ export default function SaintsSection() {
                   
                   {/* Name Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:translate-y-0 translate-y-2 transition-transform duration-300">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:translate-y-0 translate-y-2 transition-transform duration-300">
                       {saint.name}
                     </h3>
-                    <p className="text-gold text-sm font-semibold tracking-wider">
+                    <p className="text-gold text-base md:text-lg font-semibold tracking-wider">
                       {saint.title}
                     </p>
-                    <p className="text-white/70 text-sm mt-1">
+                    <p className="text-white/70 text-base md:text-lg mt-1">
                       {saint.period}
                     </p>
                   </div>
@@ -136,29 +138,29 @@ export default function SaintsSection() {
                     <div className="space-y-6">
                       {/* Header */}
                       <div>
-                        <h3 className="text-3xl md:text-4xl font-bold mb-2 text-foreground">
+                        <h3 className="text-2xl md:text-[25px] font-bold mb-2 text-foreground">
                           {selectedSaint.name}
                         </h3>
-                        <p className="text-gold text-base font-semibold mb-1">
+                        <p className="text-gold text-xl md:text-[22px] font-semibold mb-1">
                           {selectedSaint.title}
                         </p>
-                        <p className="text-muted-foreground text-sm">
+                        <p className="text-muted-foreground text-xl md:text-[22px]">
                           {selectedSaint.period}
                         </p>
                       </div>
 
                       {/* Biography */}
                       <div>
-                        <h4 className="text-xl font-bold mb-3 text-foreground">Biography</h4>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <h4 className="text-2xl md:text-[25px] font-bold mb-3 text-foreground">Biography</h4>
+                        <p className="text-xl md:text-[22px] text-muted-foreground leading-relaxed">
                           {selectedSaint.bio}
                         </p>
                       </div>
 
                       {/* Contribution */}
                       <div className="bg-gradient-to-r from-saffron/10 via-gold/10 to-transparent rounded-xl p-5 border-l-4 border-saffron">
-                        <h4 className="text-lg font-bold mb-2 text-foreground">Contribution</h4>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <h4 className="text-2xl md:text-[25px] font-bold mb-2 text-foreground">Contribution</h4>
+                        <p className="text-xl md:text-[22px] text-muted-foreground leading-relaxed">
                           {selectedSaint.contribution}
                         </p>
                       </div>

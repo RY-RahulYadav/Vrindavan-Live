@@ -133,8 +133,8 @@ export default function Navigation() {
           : "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md"
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-8 py-4 md:py-6">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto max-[310px]:px-2 max-[370px]:px-2 px-4 lg:px-6 xl:px-8 py-4 md:py-6">
+        <div className="flex items-center justify-between max-[310px]:gap-1 max-[370px]:gap-1 gap-2 md:gap-3 xl:gap-4">
           {/* Logo */}
           <a 
             href="#home" 
@@ -142,9 +142,9 @@ export default function Navigation() {
               e.preventDefault()
               scrollToSection("#home")
             }}
-            className="flex items-center gap-2 md:gap-3 group"
+            className="flex items-center max-[700px]:gap-0.5 max-[310px]:gap-0 max-[370px]:gap-0.5 gap-1 md:gap-1.5 xl:gap-2 group flex-shrink-0 min-w-0"
           >
-            <div className="relative w-12 h-12 md:w-16 md:h-16 flex-shrink-0">
+            <div className="relative max-[370px]:w-14 max-[370px]:h-14 min-[370px]:max-[400px]:w-16 min-[370px]:max-[400px]:h-16 w-12 h-12 min-[650px]:w-16 min-[650px]:h-16 max-[770px]:w-16 max-[770px]:h-16 md:w-20 md:h-20 flex-shrink-0">
               <Image
                 src="/logo.png"
                 alt="Vrindavan Live Logo"
@@ -152,11 +152,11 @@ export default function Navigation() {
                 className="object-contain group-hover:scale-110 transition-transform duration-300"
               />
             </div>
-            <div className="flex flex-col">
-              <span className="nav-logo-text md:text-2xl font-bold bg-orange-500 bg-clip-text text-transparent">
+            <div className="flex flex-col min-w-0">
+              <span className="max-[370px]:text-[22px] text-[23px] sm:text-xl min-[650px]:text-[26px] max-[770px]:text-[26px] md:text-[24px] lg:text-[26px] xl:text-[28px] font-bold bg-gradient-to-r from-saffron via-gold to-peacock bg-clip-text text-transparent whitespace-nowrap">
                 Vrindavan Live
               </span>
-              <span className={`hidden sm:block text-[10px] md:text-xs tracking-widest ${
+              <span className={`hidden sm:block text-[10px] md:text-xs lg:text-sm tracking-widest ${
                 scrolled ? "text-muted-foreground" : "text-foreground/70"
               }`}>
                 Experience Krishna's Divine Abode
@@ -165,7 +165,7 @@ export default function Navigation() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0 lg:gap-0.5 xl:gap-1 flex-shrink-0 min-w-0">
             {navItems.map((item) => {
               const sectionId = item.href.startsWith('#') ? item.href.replace('#', '') : ''
               // Check if active: 
@@ -192,7 +192,7 @@ export default function Navigation() {
                     e.preventDefault()
                     scrollToSection(item.href)
                   }}
-                  className={`relative px-3 xl:px-4 py-2 text-base font-semibold transition-colors duration-300 rounded-lg ${
+                  className={`relative px-1.5 lg:px-2 xl:px-3 2xl:px-4 py-2 text-sm lg:text-[14px] xl:text-[16px] 2xl:text-[18px] font-semibold transition-colors duration-300 rounded-lg whitespace-nowrap ${
                     isActive 
                       ? "text-saffron" 
                       : "text-foreground hover:text-saffron"
@@ -213,7 +213,7 @@ export default function Navigation() {
           </div>
 
           {/* Right Side Actions */}
-          <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex items-center max-[310px]:gap-1 max-[400px]:gap-0.5 gap-1.5 md:gap-2 xl:gap-3 flex-shrink-0">
             <Button
               variant="ghost"
               size="icon"
@@ -229,7 +229,7 @@ export default function Navigation() {
                     exit={{ rotate: 90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Sun className="w-5 h-5 text-gold" />
+                    <Sun className="max-[700px]:w-8 max-[700px]:h-8 w-5 h-5 md:w-6 lg:w-7 xl:w-8 text-gold" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -239,7 +239,7 @@ export default function Navigation() {
                     exit={{ rotate: -90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Moon className="w-5 h-5 text-peacock" />
+                    <Moon className="max-[700px]:w-8 max-[700px]:h-8 w-5 h-5 md:w-6 lg:w-7 xl:w-8 text-peacock" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -248,7 +248,7 @@ export default function Navigation() {
             <Button
               size="sm"
               variant="outline"
-              className="hidden md:inline-flex border-2 border-saffron text-saffron hover:bg-saffron hover:text-white font-bold transition-all duration-300 text-sm md:text-base px-4 md:px-6 py-3 md:py-4 rounded-full"
+              className="hidden md:inline-flex border-2 border-saffron text-saffron hover:bg-saffron hover:text-white font-bold transition-all duration-300 text-xs lg:text-sm xl:text-base 2xl:text-lg px-2.5 lg:px-3 xl:px-5 2xl:px-6 py-1.5 lg:py-2 xl:py-3 2xl:py-4 rounded-full whitespace-nowrap"
             >
               Get Started
             </Button>
@@ -268,7 +268,7 @@ export default function Navigation() {
                     animate={{ rotate: 0, opacity: 1 }}
                     exit={{ rotate: 90, opacity: 0 }}
                   >
-                    <X className="w-6 h-6" />
+                    <X className="max-[700px]:w-10 max-[700px]:h-10 w-6 h-6 md:w-8 md:h-8" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -277,7 +277,7 @@ export default function Navigation() {
                     animate={{ rotate: 0, opacity: 1 }}
                     exit={{ rotate: -90, opacity: 0 }}
                   >
-                    <Menu className="w-6 h-6" />
+                    <Menu className="max-[700px]:w-10 max-[700px]:h-10 w-6 h-6 md:w-8 md:h-8" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -326,7 +326,7 @@ export default function Navigation() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className={`text-lg md:text-xl font-semibold transition-colors py-2 px-4 rounded-lg ${
+                    className={`text-xl md:text-2xl font-semibold transition-colors py-2 px-4 rounded-lg ${
                       isActive 
                         ? "text-saffron bg-saffron/10" 
                         : "hover:text-saffron hover:bg-muted"

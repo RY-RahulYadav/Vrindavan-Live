@@ -59,13 +59,13 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block text-saffron text-sm md:text-base tracking-[0.3em] uppercase font-semibold mb-4">
+          <span className="inline-block text-saffron text-base md:text-[28px] tracking-[0.3em] uppercase font-semibold mb-4">
             What We Offer
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-saffron via-peacock to-gold bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-[32px] font-bold mb-6 bg-gradient-to-r from-saffron via-peacock to-gold bg-clip-text text-transparent">
             Plan Your Vrindavan Visit
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Comprehensive services to make your spiritual journey comfortable, memorable, and hassle-free
           </p>
         </motion.div>
@@ -93,10 +93,10 @@ export default function ServicesSection() {
 
                 {/* Content */}
                 <div className="relative">
-                  <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-saffron transition-colors">
+                  <h3 className="text-2xl md:text-[25px] font-bold mb-3 text-foreground group-hover:text-saffron transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
+                  <p className="text-xl md:text-[22px] text-muted-foreground leading-relaxed mb-6">
                     {service.description}
                   </p>
 

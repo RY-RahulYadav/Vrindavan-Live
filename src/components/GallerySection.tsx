@@ -11,7 +11,7 @@ const categories = ["All", "Temples", "Radha Krishna"]
 
 export default function GallerySection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { once: false, amount: 0.05, margin: "0px" })
   const [selectedCategory, setSelectedCategory] = useState("All")
   const images = dataStore.galleryImages
 
@@ -20,32 +20,34 @@ export default function GallerySection() {
     : images.filter(img => img.category === selectedCategory)
 
   return (
-    <section id="gallery" ref={ref} className="relative py-20 md:py-32 bg-gradient-to-b from-ivory via-background to-muted overflow-hidden">
+    <section id="gallery" ref={ref} className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-ivory via-background to-muted overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
+          className="text-center mb-8 md:mb-12"
+          style={{ willChange: 'transform, opacity' }}
         >
-          <span className="inline-block text-gold text-sm md:text-base tracking-[0.3em] uppercase font-semibold mb-4">
+          <span className="inline-block text-gold text-base md:text-[30px] max-[700px]:text-[22px] tracking-[0.3em] uppercase font-semibold mb-4">
             Visual Journey
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-gold via-saffron to-peacock bg-clip-text text-transparent">
+          <h2 className="max-[700px]:text-[32px] text-4xl md:text-[60px] font-bold mb-6 bg-gradient-to-r from-gold via-saffron to-peacock bg-clip-text text-transparent">
             Gallery
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-[22px] text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Glimpse the divine beauty of Vrindavan through our curated collection of sacred moments
           </p>
         </motion.div>
 
         {/* Category Filter */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
+          className="flex flex-wrap justify-center gap-3 mb-8 md:mb-12"
+          style={{ willChange: 'transform, opacity' }}
         >
           {categories.map((category) => (
             <Button
@@ -65,18 +67,20 @@ export default function GallerySection() {
 
         {/* Masonry Grid */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          initial={{ opacity: 1 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 1 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6"
+          style={{ willChange: 'opacity' }}
         >
           {filteredImages.map((image, index) => (
             <motion.div
               key={image.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+              transition={{ duration: 0.15, ease: "easeOut" }}
               className="break-inside-avoid group"
+              style={{ willChange: 'transform, opacity' }}
             >
               <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50 hover:border-gold/50">
                 <div className="relative aspect-[4/3]">
@@ -94,10 +98,11 @@ export default function GallerySection() {
 
         {/* Load More Button */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-12"
+          initial={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
+          className="text-center mt-8 md:mt-12"
+          style={{ willChange: 'transform, opacity' }}
         >
           <Button
             size="lg"

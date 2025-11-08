@@ -223,14 +223,14 @@ export default function ContactSection() {
               </h3>
               <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border border-border/50 flex-1 min-h-[200px] sm:min-h-[250px] md:min-h-[300px] lg:min-h-0 w-full">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56449.76887!2d77.65!3d27.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736ce47bffc039%3A0xfe5fc3da92c6341!2sVrindavan%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, minHeight: '200px' }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="grayscale hover:grayscale-0 transition-all duration-500 w-full h-full"
+                  src="https://www.google.com/maps?q=Gautam+pada+chauraha+Near+gaudiya+math+temple+Vrindavan+Uttar+Pradesh+India&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, minHeight: '200px' }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="grayscale hover:grayscale-0 transition-all duration-500 w-full h-full"
                 ></iframe>
               </div>
             </div>

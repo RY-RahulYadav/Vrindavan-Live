@@ -219,7 +219,7 @@ export default function ContactPage() {
                 </h3>
                 <div className="rounded-2xl overflow-hidden shadow-lg border border-border/50">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56449.76887!2d77.65!3d27.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736ce47bffc039%3A0xfe5fc3da92c6341!2sVrindavan%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890"
+                    src="https://www.google.com/maps?q=Gautam+pada+chauraha+Near+gaudiya+math+temple+Vrindavan+Uttar+Pradesh+India&output=embed"
                     width="100%"
                     height="400"
                     style={{ border: 0 }}
@@ -236,22 +236,22 @@ export default function ContactPage() {
       </main>
       <Footer />
 
-      {/* Fixed Call and WhatsApp Buttons - Mobile Only */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 flex sm:hidden border-t border-border/20">
+      {/* Fixed Call and WhatsApp Buttons - Below 700px Only */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 hidden max-[700px]:flex border-t border-border/20">
         <a
           href="tel:+918700661267"
-          className="flex-1 bg-gradient-to-r from-saffron to-gold hover:from-saffron/90 hover:to-gold/90 text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-base md:text-lg"
+          className="flex-1 bg-gradient-to-r from-saffron to-gold hover:from-saffron/90 hover:to-gold/90 text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-base"
         >
-          <Phone className="w-4 h-4" />
+          <Phone className="w-5 h-5" />
           <span>Call Now</span>
         </a>
         <a
           href="https://wa.me/918700661267"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 bg-gradient-to-r from-green-700 to-green-600 hover:from-green-800 hover:to-green-700 text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-base md:text-lg"
+          className="flex-1 bg-gradient-to-r from-green-700 to-green-600 hover:from-green-800 hover:to-green-700 text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-base"
         >
-          <MessageCircle className="w-4 h-4" />
+          <MessageCircle className="w-5 h-5" />
           <span>WhatsApp</span>
         </a>
       </div>

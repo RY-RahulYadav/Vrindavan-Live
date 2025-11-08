@@ -133,8 +133,8 @@ export default function Navigation() {
           : "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md"
       }`}
     >
-      <div className="container mx-auto px-4 lg:px-6 xl:px-8 py-4 md:py-6">
-        <div className="flex items-center justify-between gap-2 md:gap-3 xl:gap-4">
+      <div className="container mx-auto max-[310px]:px-2 px-4 lg:px-6 xl:px-8 py-4 md:py-6">
+        <div className="flex items-center justify-between max-[310px]:gap-1 gap-2 md:gap-3 xl:gap-4">
           {/* Logo */}
           <a 
             href="#home" 
@@ -142,7 +142,7 @@ export default function Navigation() {
               e.preventDefault()
               scrollToSection("#home")
             }}
-            className="flex items-center gap-1 md:gap-1.5 xl:gap-2 group flex-shrink-0 min-w-0"
+            className="flex items-center max-[700px]:gap-0.5 max-[310px]:gap-0 gap-1 md:gap-1.5 xl:gap-2 group flex-shrink-0 min-w-0"
           >
             <div className="relative w-12 h-12 md:w-20 md:h-20 flex-shrink-0">
               <Image
@@ -213,7 +213,7 @@ export default function Navigation() {
           </div>
 
           {/* Right Side Actions */}
-          <div className="flex items-center gap-1.5 md:gap-2 xl:gap-3 flex-shrink-0">
+          <div className="flex items-center max-[310px]:gap-1 gap-1.5 md:gap-2 xl:gap-3 flex-shrink-0">
             <Button
               variant="ghost"
               size="icon"
@@ -229,7 +229,7 @@ export default function Navigation() {
                     exit={{ rotate: 90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Sun className="w-5 h-5 md:w-6 lg:w-7 xl:w-8 text-gold" />
+                    <Sun className="max-[700px]:w-8 max-[700px]:h-8 w-5 h-5 md:w-6 lg:w-7 xl:w-8 text-gold" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -239,7 +239,7 @@ export default function Navigation() {
                     exit={{ rotate: -90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Moon className="w-5 h-5 md:w-6 lg:w-7 xl:w-8 text-peacock" />
+                    <Moon className="max-[700px]:w-8 max-[700px]:h-8 w-5 h-5 md:w-6 lg:w-7 xl:w-8 text-peacock" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -268,7 +268,7 @@ export default function Navigation() {
                     animate={{ rotate: 0, opacity: 1 }}
                     exit={{ rotate: 90, opacity: 0 }}
                   >
-                    <X className="w-6 h-6 md:w-8 md:h-8" />
+                    <X className="max-[700px]:w-10 max-[700px]:h-10 w-6 h-6 md:w-8 md:h-8" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -277,7 +277,7 @@ export default function Navigation() {
                     animate={{ rotate: 0, opacity: 1 }}
                     exit={{ rotate: -90, opacity: 0 }}
                   >
-                    <Menu className="w-6 h-6 md:w-8 md:h-8" />
+                    <Menu className="max-[700px]:w-10 max-[700px]:h-10 w-6 h-6 md:w-8 md:h-8" />
                   </motion.div>
                 )}
               </AnimatePresence>

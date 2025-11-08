@@ -13,15 +13,15 @@ const videos = [
     url: "https://www.youtube.com/embed/ABQIMCa776M",
     title: "पूज्य महाराज जी के आज के दर्शन",
     thumbnail: "/radhakrishan1.jpg",
-    description: "Guru Kripa Kevalam by Param Pujya Vrindavan Rasik Sant Shri Hit Premanand Govind Sharan Ji Maharaj, Shri Hit Radha Keli Kunj, Varah Ghat, Vrindavan Dham ||  Shri Hit Premanand Ji Maharaj"
+    description: "Guru Kripa Kevalam by Param Pujya Vrindavan Rasik Sant Shri Hit Premanand Govind Sharan Ji Maharaj "
   },
   {
     id: 2,
     type: "youtube",
     url: "https://www.youtube.com/embed/9MOObu47Nw0",
-    title: "Yamuna Aarti | Jai Jai Maharani Jamuna Jai Jai Patrani Yamuna",
+    title: "Yamuna Aarti",
     thumbnail: "/radhakrishan2.jpg",
-    description: "Watch  Yamuna Aarti | Jai Jai Maharani Jamuna Jai Jai Patrani Yamuna | Aarti Yamuna Ji Ki | Sanskar TV"
+    description: "Watch  Yamuna Aarti | Jai Jai Maharani Jamuna Jai Jai Patrani Yamuna | Aarti Yamuna Ji Ki "
   },
   {
     id: 3,

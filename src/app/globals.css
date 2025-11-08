@@ -347,6 +347,14 @@ section {
   }
 }
 
+/* Contact page detail text size below 700px */
+@media (max-width: 700px) {
+  .contact-info-section p.text-muted-foreground,
+  #contact p.text-muted-foreground {
+    font-size: 18px !important;
+  }
+}
+
 @media (max-width: 500px) {
   .nav-logo-text {
     font-size: 1.4rem; /* text-3xl */

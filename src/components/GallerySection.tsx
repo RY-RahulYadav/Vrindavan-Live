@@ -56,8 +56,8 @@ export default function GallerySection() {
               variant={selectedCategory === category ? "default" : "outline"}
               className={
                 selectedCategory === category
-                  ? "bg-gradient-to-r from-saffron to-gold hover:from-saffron/90 hover:to-gold/90 text-white font-semibold"
-                  : "border-saffron/30 text-foreground hover:bg-saffron/10 hover:text-saffron"
+                  ? "bg-gradient-to-r from-saffron to-gold hover:from-saffron/90 hover:to-gold/90 text-white font-semibold max-[700px]:text-[16px]"
+                  : "border-saffron/30 text-foreground hover:bg-saffron/10 hover:text-saffron max-[700px]:text-[16px]"
               }
             >
               {category}

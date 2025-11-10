@@ -135,6 +135,7 @@ export default function ServicesPage() {
       <Navigation />
       <main className="pt-32 md:pt-40">
         {/* Hero Section */}
+        
         <div ref={heroRef} className="relative pt-12 pb-8 sm:pt-8 sm:pb-8 md:pt-20 md:pb-10 bg-gradient-to-b from-saffron/10 via-gold/5 to-background overflow-hidden">
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <motion.div

@@ -58,9 +58,9 @@ export default function ContactPage() {
   return (
     <div className="relative min-h-screen">
       <Navigation />
-      <main className="pt-20">
+      <main className="pt-32 md:pt-40">
         {/* Hero Section */}
-        <section className="relative max-[800px]:pt-20 pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-saffron/10 via-gold/5 to-background overflow-hidden max-[800px]:mt-0 mt-10">
+        <section className="relative pt-8 pb-20 sm:pt-12 sm:pb-24 md:pt-16 md:pb-32 bg-gradient-to-b from-saffron/10 via-gold/5 to-background overflow-hidden">
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -249,9 +249,9 @@ export default function ContactPage() {
           href="https://wa.me/918700661267"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 bg-[#FFE4D6] hover:bg-[#FFD9C7] text-foreground font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 text-base"
+          className="flex-1 bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 text-base"
         >
-          <MessageCircle className="w-5 h-5" style={{ color: '#25D366' }} />
+          <MessageCircle className="w-5 h-5 text-white" />
           <span>WhatsApp</span>
         </a>
       </div>

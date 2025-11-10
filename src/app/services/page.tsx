@@ -9,6 +9,7 @@ import { Hotel, Car, MapPin, Calendar, Heart, Phone, Flower2, BookOpen, Users, C
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import ContactSection from "@/components/ContactSection"
 
 const services = [
   {
@@ -18,83 +19,83 @@ const services = [
     color: "from-saffron to-gold",
     features: ["Near Temple Locations", "Pilgrim-Friendly", "24/7 Support", "Verified Properties"]
   },
-  {
-    icon: Car,
-    title: "Taxi Services",
-    description: "Reliable transportation throughout Vrindavan and nearby holy sites. Book safe, comfortable rides with experienced local drivers who know every sacred path where Radha and Krishna once walked.",
-    color: "from-peacock to-blue-600",
-    features: ["Local Expert Drivers", "Temple Tours", "Airport Transfer", "Safe & Reliable"]
-  },
-  {
-    icon: MapPin,
-    title: "Temple Tours",
-    description: "Guided tours of Vrindavan's most sacred temples dedicated to Radha and Krishna. Expert guides share divine stories, history, and spiritual significance of each sacred site.",
-    color: "from-gold to-yellow-600",
-    features: ["Expert Guides", "Radha Krishna Temples", "Spiritual Stories", "Darshan Assistance"]
-  },
-  {
-    icon: Calendar,
-    title: "Festival Packages",
-    description: "Experience Vrindavan's vibrant festivals like Holi, Janmashtami, and Kartik celebrating Radha and Krishna's divine love. Complete packages including accommodation and special darshan.",
-    color: "from-purple-600 to-pink-600",
-    features: ["Festival Celebrations", "Special Darshan", "Complete Packages", "Cultural Experience"]
-  },
-  {
-    icon: Heart,
-    title: "Donation Help",
-    description: "Contribute to temple maintenance and charitable causes in the name of Radha and Krishna. We ensure your donations reach the right places with complete transparency and divine blessings.",
-    color: "from-red-500 to-rose-600",
-    features: ["Temple Donations", "Charitable Causes", "Transparent Process", "Divine Service"]
-  },
-  {
-    icon: Phone,
-    title: "24/7 Support",
-    description: "Round-the-clock assistance for pilgrims visiting Radha and Krishna's divine abode. Get help with bookings, directions, emergencies, or any questions during your spiritual journey.",
-    color: "from-green-600 to-emerald-600",
-    features: ["24/7 Availability", "Emergency Support", "Booking Assistance", "Spiritual Guidance"]
-  },
-  {
-    icon: Flower2,
-    title: "Prasadam Services",
-    description: "Experience the divine taste of prasadam (blessed food) offered to Radha and Krishna. We help you find authentic temple prasadam and organize special prasadam distribution.",
-    color: "from-orange-500 to-amber-600",
-    features: ["Temple Prasadam", "Authentic Food", "Special Arrangements", "Divine Blessings"]
-  },
-  {
-    icon: BookOpen,
-    title: "Spiritual Books & Literature",
-    description: "Access sacred texts, books, and literature about Radha and Krishna's divine pastimes. We provide guidance on authentic spiritual literature and scriptures.",
-    color: "from-indigo-600 to-purple-600",
-    features: ["Sacred Texts", "Spiritual Books", "Krishna Literature", "Divine Knowledge"]
-  },
-  {
-    icon: Users,
-    title: "Group Pilgrimage",
-    description: "Organize group pilgrimages to Vrindavan with special arrangements for devotees of Radha and Krishna. Experience the divine together with like-minded souls.",
-    color: "from-teal-600 to-cyan-600",
-    features: ["Group Packages", "Special Rates", "Coordinated Tours", "Community Experience"]
-  },
-  {
-    icon: Camera,
-    title: "Photography Services",
-    description: "Capture your spiritual journey in Vrindavan with professional photography services. Document your darshan and memories in the divine land of Radha and Krishna.",
-    color: "from-pink-600 to-rose-600",
-    features: ["Professional Photographers", "Temple Photography", "Memory Preservation", "Divine Moments"]
-  },
-  {
-    icon: Music,
-    title: "Kirtan & Bhajan Services",
-    description: "Experience soul-stirring kirtans and bhajans dedicated to Radha and Krishna. We organize special kirtan sessions and connect you with renowned kirtan artists.",
-    color: "from-violet-600 to-purple-600",
-    features: ["Kirtan Sessions", "Bhajan Programs", "Renowned Artists", "Divine Music"]
-  },
-  {
-    icon: Gift,
-    title: "Puja & Ritual Services",
-    description: "Arrange special pujas, aartis, and rituals dedicated to Radha and Krishna. We help organize personalized spiritual ceremonies in sacred temples.",
-    color: "from-amber-600 to-orange-600",
-    features: ["Special Pujas", "Aarti Arrangements", "Ritual Services", "Divine Ceremonies"]
-  }
+  // {
+  //   icon: Car,
+  //   title: "Taxi Services",
+  //   description: "Reliable transportation throughout Vrindavan and nearby holy sites. Book safe, comfortable rides with experienced local drivers who know every sacred path where Radha and Krishna once walked.",
+  //   color: "from-peacock to-blue-600",
+  //   features: ["Local Expert Drivers", "Temple Tours", "Airport Transfer", "Safe & Reliable"]
+  // },
+  // {
+  //   icon: MapPin,
+  //   title: "Temple Tours",
+  //   description: "Guided tours of Vrindavan's most sacred temples dedicated to Radha and Krishna. Expert guides share divine stories, history, and spiritual significance of each sacred site.",
+  //   color: "from-gold to-yellow-600",
+  //   features: ["Expert Guides", "Radha Krishna Temples", "Spiritual Stories", "Darshan Assistance"]
+  // },
+  // {
+  //   icon: Calendar,
+  //   title: "Festival Packages",
+  //   description: "Experience Vrindavan's vibrant festivals like Holi, Janmashtami, and Kartik celebrating Radha and Krishna's divine love. Complete packages including accommodation and special darshan.",
+  //   color: "from-purple-600 to-pink-600",
+  //   features: ["Festival Celebrations", "Special Darshan", "Complete Packages", "Cultural Experience"]
+  // },
+  // {
+  //   icon: Heart,
+  //   title: "Donation Help",
+  //   description: "Contribute to temple maintenance and charitable causes in the name of Radha and Krishna. We ensure your donations reach the right places with complete transparency and divine blessings.",
+  //   color: "from-red-500 to-rose-600",
+  //   features: ["Temple Donations", "Charitable Causes", "Transparent Process", "Divine Service"]
+  // },
+  // {
+  //   icon: Phone,
+  //   title: "24/7 Support",
+  //   description: "Round-the-clock assistance for pilgrims visiting Radha and Krishna's divine abode. Get help with bookings, directions, emergencies, or any questions during your spiritual journey.",
+  //   color: "from-green-600 to-emerald-600",
+  //   features: ["24/7 Availability", "Emergency Support", "Booking Assistance", "Spiritual Guidance"]
+  // },
+  // {
+  //   icon: Flower2,
+  //   title: "Prasadam Services",
+  //   description: "Experience the divine taste of prasadam (blessed food) offered to Radha and Krishna. We help you find authentic temple prasadam and organize special prasadam distribution.",
+  //   color: "from-orange-500 to-amber-600",
+  //   features: ["Temple Prasadam", "Authentic Food", "Special Arrangements", "Divine Blessings"]
+  // },
+  // {
+  //   icon: BookOpen,
+  //   title: "Spiritual Books & Literature",
+  //   description: "Access sacred texts, books, and literature about Radha and Krishna's divine pastimes. We provide guidance on authentic spiritual literature and scriptures.",
+  //   color: "from-indigo-600 to-purple-600",
+  //   features: ["Sacred Texts", "Spiritual Books", "Krishna Literature", "Divine Knowledge"]
+  // },
+  // {
+  //   icon: Users,
+  //   title: "Group Pilgrimage",
+  //   description: "Organize group pilgrimages to Vrindavan with special arrangements for devotees of Radha and Krishna. Experience the divine together with like-minded souls.",
+  //   color: "from-teal-600 to-cyan-600",
+  //   features: ["Group Packages", "Special Rates", "Coordinated Tours", "Community Experience"]
+  // },
+  // {
+  //   icon: Camera,
+  //   title: "Photography Services",
+  //   description: "Capture your spiritual journey in Vrindavan with professional photography services. Document your darshan and memories in the divine land of Radha and Krishna.",
+  //   color: "from-pink-600 to-rose-600",
+  //   features: ["Professional Photographers", "Temple Photography", "Memory Preservation", "Divine Moments"]
+  // },
+  // {
+  //   icon: Music,
+  //   title: "Kirtan & Bhajan Services",
+  //   description: "Experience soul-stirring kirtans and bhajans dedicated to Radha and Krishna. We organize special kirtan sessions and connect you with renowned kirtan artists.",
+  //   color: "from-violet-600 to-purple-600",
+  //   features: ["Kirtan Sessions", "Bhajan Programs", "Renowned Artists", "Divine Music"]
+  // },
+  // {
+  //   icon: Gift,
+  //   title: "Puja & Ritual Services",
+  //   description: "Arrange special pujas, aartis, and rituals dedicated to Radha and Krishna. We help organize personalized spiritual ceremonies in sacred temples.",
+  //   color: "from-amber-600 to-orange-600",
+  //   features: ["Special Pujas", "Aarti Arrangements", "Ritual Services", "Divine Ceremonies"]
+  // }
 ]
 
 const devotionalQuotes = [
@@ -106,19 +107,19 @@ const devotionalQuotes = [
     text: "In serving the pilgrims of Vrindavan, we serve Radha and Krishna themselves, for they reside in the hearts of all devotees.",
     icon: Flower2
   },
-  {
-    text: "True service is offering everything to the divine with love, humility, and devotion, just as Radha offered everything to Krishna.",
-    icon: Sparkles
-  }
+  // {
+  //   text: "True service is offering everything to the divine with love, humility, and devotion, just as Radha offered everything to Krishna.",
+  //   icon: Sparkles
+  // }
 ]
 
 const serviceImages = [
-  { src: "/radhakrishan1.jpg", alt: "Radha Krishna Divine Service" },
-  { src: "/radhakrishan2.jpg", alt: "Divine Blessings" },
-  { src: "/rk0.jpg", alt: "Spiritual Journey" },
-  { src: "/radha_govind.jpg", alt: "Radha Govind" },
-  { src: "/hero/h1.jpeg", alt: "Divine Abode" },
-  { src: "/hero/h2.jpeg", alt: "Sacred Vrindavan" },
+  { src: "/hero/h11.jpg", alt: "Radha Krishna Divine Service" },
+  { src: "/hero/h4.jpeg", alt: "Divine Blessings" },
+  { src: "/hero/h2.jpeg", alt: "Spiritual Journey" },
+  { src: "/hero/h10.jpg", alt: "Radha Govind" },
+  { src: "/hero/h7.jpg", alt: "Divine Abode" },
+  { src: "/hero/h8.jpg", alt: "Sacred Vrindavan" },
 ]
 
 export default function ServicesPage() {
@@ -132,9 +133,10 @@ export default function ServicesPage() {
   return (
     <div className="relative min-h-screen">
       <Navigation />
-      <main className="pt-20">
+      <main className="pt-32 md:pt-40">
         {/* Hero Section */}
-        <section ref={heroRef} className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-saffron/10 via-gold/5 to-background overflow-hidden xl:mt-10">
+        
+        <div ref={heroRef} className="relative pt-12 pb-8 sm:pt-8 sm:pb-8 md:pt-20 md:pb-10 bg-gradient-to-b from-saffron/10 via-gold/5 to-background overflow-hidden">
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 1, y: 0 }}
@@ -198,7 +200,7 @@ export default function ServicesPage() {
               </p>
             </motion.div>
           </div>
-        </section>
+        </div>
 
         {/* Devotional Quotes Section */}
         <section ref={quotesRef} className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-b from-background via-saffron/5 to-background">
@@ -228,8 +230,8 @@ export default function ServicesPage() {
               >
                 <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-saffron/30 hover:border-saffron/60 transition-all duration-500 group">
                   <Image
-                    src={serviceImages[0].src}
-                    alt={serviceImages[0].alt}
+                    src={serviceImages[3].src}
+                    alt={serviceImages[3].alt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     priority
@@ -319,12 +321,24 @@ export default function ServicesPage() {
                       </ul>
 
                       {/* Know More Button */}
-                      <Button 
-                        variant="ghost"
-                        className="group-hover:bg-saffron/10 group-hover:text-saffron transition-colors w-full"
-                      >
-                        Explore Now →
-                      </Button>
+                      {service.title === "Hotel Booking" ? (
+                        <Button 
+                          asChild
+                          variant="ghost"
+                          className="group-hover:bg-saffron/10 group-hover:text-saffron transition-colors w-full"
+                        >
+                          <Link href="/services/hotel-booking">
+                            Explore Now →
+                          </Link>
+                        </Button>
+                      ) : (
+                        <Button 
+                          variant="ghost"
+                          className="group-hover:bg-saffron/10 group-hover:text-saffron transition-colors w-full"
+                        >
+                          Explore Now →
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -336,7 +350,9 @@ export default function ServicesPage() {
  
 
       </main>
+      <ContactSection />
       <Footer />
+
 
       {/* Fixed Call and WhatsApp Buttons - Below 700px Only */}
       <div className="fixed bottom-0 left-0 right-0 z-50 hidden max-[700px]:flex border-t border-border/20 bg-background">
@@ -351,9 +367,9 @@ export default function ServicesPage() {
           href="https://wa.me/918700661267"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 bg-[#FFE4D6] hover:bg-[#FFD9C7] text-foreground font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 text-base"
+          className="flex-1 bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold py-3 px-3 flex items-center justify-center gap-2 transition-all duration-300 text-base"
         >
-          <MessageCircle className="w-5 h-5" style={{ color: '#25D366' }} />
+          <MessageCircle className="w-5 h-5 text-white" />
           <span>WhatsApp</span>
         </a>
       </div>

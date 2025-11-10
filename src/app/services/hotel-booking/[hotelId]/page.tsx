@@ -10,7 +10,7 @@ import { MapPin, ArrowLeft, Star, Heart, Sparkles, Flower2, Phone, MessageCircle
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
-import { hotels } from "../page"
+import { hotels } from "../hotels-data"
 
 // Video Player Component with Custom Play/Pause Button
 function VideoPlayer({ video, index }: { video: string; index: number }) {
